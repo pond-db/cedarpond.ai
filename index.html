@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedar Pond AI — Infrastructure for AI Agents</title>
+    <meta name="description" content="Open-source tools to build, store, and operate AI agent fleets. From the database layer to the operations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cedar-deep: #1A2F26;
+            --cedar: #2D4A3E;
+            --pond: #4A8B7F;
+            --pond-light: #6DB5A6;
+            --pond-surface: #E8F4F0;
+            --stone: #F9F8F6;
+            --bark: #8B7355;
+            --text: #2C2C2C;
+            --text-muted: #6B6B6B;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text);
+            background: var(--stone);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        code, .mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        a {
+            color: var(--pond);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--pond-light);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(249, 248, 246, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(45, 74, 62, 0.08);
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            color: var(--cedar-deep);
+        }
+
+        .logo svg {
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--cedar);
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--pond);
+        }
+
+        .nav-links .gh-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--cedar-deep);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--cedar);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--cedar-deep);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cedar);
+            border: 1.5px solid var(--cedar);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cedar);
+            color: #fff;
+        }
+
+        /* ---- PRODUCTS ---- */
+        .products {
+            padding: 80px 0 100px;
+        }
+
+        .products > .container > h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--cedar-deep);
+            margin-bottom: 56px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* PondDB — shipped card */
+        .product-card.shipped {
+            border-left: 4px solid var(--pond);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+        }
+
+        /* PondOps — coming soon card */
+        .product-card.coming-soon {
+            border: 1.5px dashed rgba(74, 139, 127, 0.4);
+            background: rgba(255,255,255,0.7);
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .badge.shipped {
+            background: var(--pond-surface);
+            color: var(--pond);
+        }
+
+        .badge.soon {
+            background: rgba(139, 115, 85, 0.1);
+            color: var(--bark);
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            color: var(--cedar-deep);
+            margin-bottom: 12px;
+        }
+
+        .product-card .desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .shipped .feature-list li::before {
+            background: var(--pond);
+        }
+
+        .coming-soon .feature-list li::before {
+            background: var(--bark);
+        }
+
+        .terminal {
+            background: var(--cedar-deep);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .terminal code {
+            color: #c8d6d0;
+            font-size: 0.82rem;
+            line-height: 1.8;
+            white-space: pre;
+        }
+
+        .terminal .prompt {
+            color: var(--pond-light);
+        }
+
+        .terminal .success {
+            color: #7dcea0;
+        }
+
+        .product-cta {
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-cta:hover {
+            gap: 10px;
+        }
+
+        /* ---- ARCHITECTURE ---- */
+        .architecture {
+            background: var(--cedar-deep);
+            padding: 100px 0;
+            color: #fff;
+        }
+
+        .architecture h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 48px;
+            color: #fff;
+        }
+
+        .arch-diagram {
+            max-width: 560px;
+            margin: 0 auto 40px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #a0bfb5;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 36px 32px;
+        }
+
+        .arch-diagram .layer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .arch-diagram .box {
+            color: var(--pond-light);
+            white-space: nowrap;
+        }
+
+        .arch-diagram .annotation {
+            color: #6a8a80;
+            margin-left: 8px;
+        }
+
+        .arch-diagram .arrow {
+            text-align: center;
+            color: #4a6a5e;
+            padding: 2px 0;
+        }
+
+        .arch-desc {
+            text-align: center;
+            max-width: 540px;
+            margin: 0 auto;
+            color: #a0bfb5;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* ---- OPEN SOURCE ---- */
+        .open-source {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .open-source h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--cedar-deep);
+            margin-bottom: 16px;
+        }
+
+        .open-source p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .os-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .os-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1.5px solid rgba(74, 139, 127, 0.2);
+            transition: all 0.2s;
+        }
+
+        .os-links a:hover {
+            border-color: var(--pond);
+            background: var(--pond-surface);
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid rgba(45, 74, 62, 0.08);
+            padding: 32px 0;
+        }
+
+        footer .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-left {
+            font-family: 'DM Serif Display', serif;
+            color: var(--cedar);
+            font-size: 1rem;
+        }
+
+        .footer-right {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-right a {
+            color: var(--text-muted);
+        }
+
+        .footer-right a:hover {
+            color: var(--pond);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 130px 0 72px;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .product-card {
+                padding: 28px;
+            }
+
+            .arch-diagram {
+                padding: 24px 16px;
+                font-size: 0.75rem;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 260px;
+                justify-content: center;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C12 2 10 6 10 10C10 14 12 18 12 22" stroke="#4A8B7F" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 6C12 6 8 8 8 12C8 16 12 18 12 18" stroke="#6DB5A6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M12 6C12 6 16 8 16 12C16 16 12 18 12 18" stroke="#6DB5A6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                    <circle cx="12" cy="4" r="2" fill="#4A8B7F"/>
+                </svg>
+                Cedar Pond
+            </a>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#open-source">Open Source</a></li>
+                <li><a href="https://github.com/pond-db" target="_blank" rel="noopener" class="gh-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Infrastructure for AI Agents</h1>
+            <p class="fade-in">Open-source tools to build, store, and operate AI agent fleets. From the database layer to the operations platform.</p>
+            <div class="hero-btns fade-in">
+                <a href="#ponddb" class="btn btn-primary">Explore PondDB</a>
+                <a href="https://github.com/pond-db" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="fade-in">What We Build</h2>
+            <div class="product-grid">
+
+                <!-- PondDB -->
+                <article class="product-card shipped fade-in" id="ponddb">
+                    <span class="badge shipped">Available Now &middot; v1.1.0</span>
+                    <h3>PondDB &mdash; The Database for AI Agents</h3>
+                    <p class="desc">A lightweight, open-source database built for AI agent memory. Five memory types, cross-agent sharing, full audit logging, and MCP server built in. Works with any framework &mdash; OpenAI, LangGraph, CrewAI, Google ADK, Claude.</p>
+                    <ul class="feature-list">
+                        <li>5 memory types (working, episodic, semantic, procedural, shared)</li>
+                        <li>Cross-agent memory grants with access control</li>
+                        <li>MCP server for tool-use integration</li>
+                        <li>1,280+ tests, benchmarked (903 writes/sec)</li>
+                        <li>SQLite-powered, self-hosted, Docker ready</li>
+                    </ul>
+                    <div class="terminal">
+                        <code><span class="prompt">$</span> pip install ponddb
+<span class="prompt">$</span> ponddb serve --port 8080
+<span class="success">&#10003;</span> PondDB running on :8080
+<span class="success">&#10003;</span> MCP server enabled
+<span class="success">&#10003;</span> 5 memory types ready</code>
+                    </div>
+                    <a href="https://github.com/pond-db/pond-db" target="_blank" rel="noopener" class="product-cta">View on GitHub &rarr;</a>
+                </article>
+
+                <!-- PondOps -->
+                <article class="product-card coming-soon fade-in" id="pondops">
+                    <span class="badge soon">Coming Soon &middot; In Development</span>
+                    <h3>PondOps &mdash; DevOps for AI Agents</h3>
+                    <p class="desc">Build, test, deploy, and optimize your AI agent fleet. Connection holding, auto-suspend, cost attribution, A/B testing, and CI/CD for agent builders. The missing operations layer.</p>
+                    <ul class="feature-list">
+                        <li>Connection holding (hold requests while agents resume)</li>
+                        <li>Auto-suspend / resume (save costs on idle agents)</li>
+                        <li>Per-agent cost attribution and token budgets</li>
+                        <li>Prompt A/B testing with canary rollout</li>
+                        <li>CI/CD pipeline for agent configs</li>
+                    </ul>
+                    <div class="terminal">
+                        <code><span class="prompt">$</span> pondops proxy start --fleet ./agents/
+<span class="success">&#10003;</span> Proxy listening on :8080
+<span class="success">&#10003;</span> 3 agents registered (2 suspended, 1 active)
+<span class="success">&#10003;</span> Connection holding enabled</code>
+                    </div>
+                    <a href="https://github.com/pond-db" target="_blank" rel="noopener" class="product-cta">Star on GitHub &rarr;</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="architecture">
+        <div class="container">
+            <h2 class="fade-in">How It All Fits Together</h2>
+            <div class="arch-diagram fade-in">
+                <div class="layer"><span class="box">Your Application</span></div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</div>
+                <div class="layer"><span class="box">PondOps Proxy</span><span class="annotation"> ← connection holding, routing, cost tracking</span></div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</div>
+                <div class="layer"><span class="box">Agent Fleet</span><span class="annotation"> ← suspend/resume, A/B testing, CI/CD</span></div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+                <div class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</div>
+                <div class="layer"><span class="box">PondDB</span><span class="annotation"> ← agent memory, grants, audit logs</span></div>
+            </div>
+            <p class="arch-desc fade-in">PondDB is the storage layer. PondOps is the operations layer. Together, they give your agent fleet a complete infrastructure stack.</p>
+        </div>
+    </section>
+
+    <!-- OPEN SOURCE -->
+    <section class="open-source" id="open-source">
+        <div class="container">
+            <h2 class="fade-in">Open Source, Always</h2>
+            <p class="fade-in">Both PondDB and PondOps are open source under the MIT license. Built by developers, for developers.</p>
+            <div class="os-links fade-in">
+                <a href="https://github.com/pond-db/pond-db" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    PondDB on GitHub
+                </a>
+                <a href="https://github.com/pond-db" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    Cedar Pond AI on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-left">Cedar Pond AI</div>
+            <div class="footer-right">
+                Built by Cedar Pond AI &middot; Open Source &middot;
+                <a href="https://github.com/pond-db" target="_blank" rel="noopener">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS: scroll fade-in -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
