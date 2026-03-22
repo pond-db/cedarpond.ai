@@ -56,22 +56,22 @@
 
   <div class="weekly-summary">
     
-    <p style="margin-bottom: 16px;">The week of March 15–22 was defined by an accelerating maturation of AI agent infrastructure. Across 80 tracked posts, agents emerged as the dominant theme, accounting for more than half of all content. The industry is clearly moving past proof-of-concept demonstrations toward production-grade concerns: persistent memory systems, cross-session state management, permission policy engines, and observability tooling all received significant attention. Notable releases included Zora, which addresses real-world agent safety failures by persisting policy constraints across context resets, and TMA1, a local-first observability layer for tracking token usage, tool calls, and session replays without cloud dependencies. The proliferation of lightweight, open-source agent frameworks — several operable entirely in the browser with no backend — signals that the barrier to deploying autonomous agents continues to drop rapidly.</p>
+    <p style="margin-bottom: 16px;">The week of March 15–22 was dominated by agent infrastructure, which accounted for the majority of tracked activity across 69 posts. The open-source ecosystem saw a wave of specialized tooling addressing the operational gaps that emerge as AI agents move into production: persistent memory systems (Sulcus, ClawMem, Bossa), debugging and observability platforms (Reticle, TMA1), security proxies against prompt injection (FireClaw, Veto), and governance frameworks for managing agent behavior at runtime. A notable architectural shift is visible in this tooling — memory is increasingly treated as an active, stateful system rather than passive vector retrieval, and agent permissions are being enforced at the infrastructure layer rather than left to behavioral prompting. The Zora framework's approach of storing safety policies in an external file that survives context compression is a representative example of practitioners hardening agents against known failure modes.</p>
     
-    <p style="margin-bottom: 16px;">Security emerged as a consequential undercurrent this week. Researchers demonstrated LLM agents capable of evading SIEM and EDR systems, marking a meaningful escalation in the adversarial AI threat landscape. Complementary defensive work appeared in parallel: an open-source prompt injection proxy using a four-stage sanitization pipeline, the Votal red-teaming framework for stress-testing agent architectures, and the Veto policy engine for governing coding agent actions. The convergence of offensive and defensive tooling suggests the security community is beginning to treat AI agents as a distinct attack surface requiring dedicated countermeasures — a shift with significant implications for enterprise deployments.</p>
+    <p style="margin-bottom: 16px;">On the model side, Nemotron-Cascade 2 was the headline release: an open 30B mixture-of-experts model with only 3B active parameters that achieves Gold Medal-level performance on IMO, IOI, and ICPC benchmarks through cascade reinforcement learning and multi-domain distillation. This continues the trend of frontier-quality reasoning at dramatically reduced compute costs, a dynamic that practitioners should watch closely as it reshapes the economics of deployment. F2LLM-v2 also landed, offering a family of multilingual embedding models covering 200+ languages with state-of-the-art MTEB results, filling a persistent gap in cross-lingual retrieval. Research this week reinforced that uncertainty estimation in reasoning models improves meaningfully with parallel sampling — an actionable finding for teams building reliability-sensitive pipelines.</p>
     
-    <p style="margin-bottom: 16px;">On the model and research front, Nemotron-Cascade 2 stood out as a notable efficiency milestone: a 30B MoE model achieving gold-medal-level performance on IMO, IOI, and ICPC benchmarks with only 3B active parameters, rivaling frontier models at a fraction of the compute cost. Research papers this week broadly explored uncertainty calibration in reasoning models, bias mitigation at the representation level, and LLM performance on low-resource languages — themes reflecting the field's ongoing push to make large models more reliable, equitable, and interpretable in production settings. Taken together, the week's output paints a picture of an industry in rapid infrastructure build-out, with safety and observability concerns increasingly driving design decisions rather than serving as afterthoughts.</p>
+    <p style="margin-bottom: 16px;">Security emerged as a cross-cutting concern. Researchers demonstrated LLM agents capable of evading SIEM and EDR systems, a signal that adversarial AI-assisted evasion is transitioning from theoretical to near-term threat. The open-source Votal red-teaming framework, which ingests an agent's tool definitions to generate targeted multi-turn attack sequences, reflects the community's recognition that agent attack surfaces require dedicated evaluation infrastructure. Taken together, this week's activity suggests the field is maturing past proof-of-concept agents toward the harder problems of governance, observability, and adversarial robustness — areas that will define production readiness over the coming quarters.</p>
     
   </div>
 
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="stat-value">80</div>
+      <div class="stat-value">69</div>
       <div class="stat-label">Posts Tracked</div>
     </div>
     
     <div class="stat-card">
-      <div class="stat-value">ArizeAI</div>
+      <div class="stat-value">llama_index</div>
       <div class="stat-label">Top Source</div>
     </div>
     
@@ -99,7 +99,7 @@
   <h3 class="card-title">
     <a href="/posts/0acb67fa0cbf5432/">FedTrident proposes a resilient federated learning framework for road condition ...</a>
   </h3>
-  <p class="card-summary">FedTrident proposes a resilient federated learning framework for road condition classification that defends against targeted label-flipping attacks from malicious vehicles, maintaining near attack-free model performance.</p>
+  <p class="card-summary">FedTrident proposes a resilient federated learning framework for road condition classification that defends against targeted label-flipping attacks from malicious vehicles. It improves robustness by tailoring poisoned model detection to various attack scenarios.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Sheng Liu, Panos Papadimitratos</span>
@@ -150,9 +150,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/3f0713824e1669a7/">Study of uncertainty estimation in reasoning LLMs via parallel sampling shows th...</a>
+    <a href="/posts/3f0713824e1669a7/">This study examines how uncertainty estimation scales with parallel sampling in ...</a>
   </h3>
-  <p class="card-summary">Study of uncertainty estimation in reasoning LLMs via parallel sampling shows that combining self-consistency and verbalized confidence yields significant AUROC gains, with hybrid estimators improving calibration from just two samples.</p>
+  <p class="card-summary">This study examines how uncertainty estimation scales with parallel sampling in reasoning language models, finding that combining verbalized confidence and self-consistency yields AUROC improvements of up to +12 with just two samples. Results span 17 tasks across math, STEM, and humanities.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Maksym Del, Markus Kängsepp, Marharyta Domnich +4 more</span>
@@ -205,7 +205,7 @@
   <h3 class="card-title">
     <a href="/posts/d6eb6fbc600f1084/">CustomTex introduces a dual-distillation framework for generating high-fidelity ...</a>
   </h3>
-  <p class="card-summary">CustomTex introduces a dual-distillation framework for generating high-fidelity 3D indoor scene textures guided by reference images, enabling instance-level control with reduced artifacts and baked-in shading.</p>
+  <p class="card-summary">CustomTex introduces a dual-distillation framework for generating high-fidelity 3D indoor scene textures guided by reference images at the instance level. It separates semantic content from appearance to reduce artifacts and improve texture quality.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Weilin Chen, Jiahao Rao, Wenhao Wang +3 more</span>
@@ -256,9 +256,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/973abae4a97d3000/">A regime-aware stock prediction framework uses an autoencoder to detect market a...</a>
+    <a href="/posts/973abae4a97d3000/">This paper presents an adaptive stock price prediction framework that uses an au...</a>
   </h3>
-  <p class="card-summary">A regime-aware stock prediction framework uses an autoencoder to detect market anomalies and routes data through specialized prediction pathways, combining transformers with reinforcement learning for adaptive forecasting.</p>
+  <p class="card-summary">This paper presents an adaptive stock price prediction framework that uses an autoencoder to detect market regime shifts and routes data through specialized prediction pathways accordingly. It combines transformers and reinforcement learning to handle volatile versus stable market conditions.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Mohammad Al Ridhawi, Mahtab Haj Ali, Hussein Al Osman</span>
@@ -309,12 +309,65 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/c6b3f75d81e05813/">First large-scale trace-level analysis of LLM-based binary vulnerability analysi...</a>
+    <a href="/posts/c6b3f75d81e05813/">The first large-scale trace-level study of LLM-based binary vulnerability analys...</a>
   </h3>
-  <p class="card-summary">First large-scale trace-level analysis of LLM-based binary vulnerability analysis identifies four implicit reasoning patterns—early pruning, path-dependent lock-in, targeted backtracking, and knowledge-guided prioritization—emerging across 521 binaries and 99K reasoning steps.</p>
+  <p class="card-summary">The first large-scale trace-level study of LLM-based binary vulnerability analysis identifies four implicit reasoning patterns—early pruning, path-dependent lock-in, targeted backtracking, and knowledge-guided prioritization—emerging across 99,563 reasoning steps. These patterns reveal how multi-pass LLM agents structurally organize exploration despite limited context windows.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Qiang Li, XiangRui Zhang, Haining Wang</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/c6b3f75d81e05813/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2603.19138v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/dafa45bb380082b0/">UGID proposes debiasing LLMs at the internal representation level by modeling th...</a>
+  </h3>
+  <p class="card-summary">UGID proposes debiasing LLMs at the internal representation level by modeling the Transformer as a computational graph and enforcing structural invariance to reduce embedded social biases. This graph-isomorphism approach goes beyond output-level or data-based debiasing methods.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Zikang Ding, Junchi Yao, Junhao Li +4 more</span>
       <span>&middot;</span>
       <span>2026-03-19</span>
       
@@ -348,59 +401,6 @@
       
     </div>
     <div class="card-links">
-      <a href="/posts/c6b3f75d81e05813/">Read more &rarr;</a>
-      <a href="http://arxiv.org/abs/2603.19138v1" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">arxiv</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/dafa45bb380082b0/">UGID frames LLM debiasing as enforcing graph isomorphism invariance over the tra...</a>
-  </h3>
-  <p class="card-summary">UGID frames LLM debiasing as enforcing graph isomorphism invariance over the transformer's internal computational graph, targeting bias at the representation level rather than outputs or training data.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>Zikang Ding, Junchi Yao, Junhao Li +4 more</span>
-      <span>&middot;</span>
-      <span>2026-03-19</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
       <a href="/posts/dafa45bb380082b0/">Read more &rarr;</a>
       <a href="http://arxiv.org/abs/2603.19144v1" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
@@ -417,7 +417,7 @@
   <h3 class="card-title">
     <a href="/posts/bf17e794ddc2dc00/">D5P4 introduces a generalized beam-search framework for discrete diffusion text ...</a>
   </h3>
-  <p class="card-summary">D5P4 introduces a generalized beam-search framework for discrete diffusion text generation using Determinantal Point Processes to promote in-batch diversity during parallel decoding.</p>
+  <p class="card-summary">D5P4 introduces a generalized beam-search framework for discrete diffusion text generation that uses Determinantal Point Processes to promote diversity among parallel decoding candidates. It extends standard beam search concepts to iterative denoising models.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Jonathan Lys, Vincent Gripon, Bastien Pasdeloup +4 more</span>
@@ -470,7 +470,7 @@
   <h3 class="card-title">
     <a href="/posts/2c22fc1de1089826/">VEPO applies reinforcement learning with verifiable rewards to improve LLM perfo...</a>
   </h3>
-  <p class="card-summary">VEPO applies reinforcement learning with verifiable rewards to improve LLM performance on low-resource languages by enforcing structural and linguistic constraints via a variable entropy mechanism during alignment.</p>
+  <p class="card-summary">VEPO applies reinforcement learning with verifiable rewards to improve LLM performance on low-resource languages by enforcing structural constraints like sequence length and linguistic well-formedness during training. A variable entropy mechanism balances literal fidelity with semantic naturalness.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Chonghan Liu, Yimin Du, Qi An +8 more</span>
@@ -523,7 +523,7 @@
   <h3 class="card-title">
     <a href="/posts/9ff2cf248aed6599/">cuGenOpt is a GPU-accelerated metaheuristic framework for combinatorial optimiza...</a>
   </h3>
-  <p class="card-summary">cuGenOpt is a GPU-accelerated metaheuristic framework for combinatorial optimization using a CUDA 'one block per solution' architecture with adaptive operator selection and a user-defined extensibility interface.</p>
+  <p class="card-summary">cuGenOpt is a GPU-accelerated metaheuristic framework for combinatorial optimization that uses a CUDA 'one block per solution' architecture with adaptive operator selection and unified encoding abstractions. It aims to simultaneously achieve generality, performance, and usability.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Yuyang Liu</span>
@@ -574,9 +574,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/5ce4363b67ee5a1d/">MAPG proposes a multi-agent probabilistic grounding approach for vision-language...</a>
+    <a href="/posts/5ce4363b67ee5a1d/">MAPG proposes a multi-agent probabilistic grounding approach enabling robots to ...</a>
   </h3>
-  <p class="card-summary">MAPG proposes a multi-agent probabilistic grounding approach for vision-language navigation, addressing the failure of state-of-the-art VLMs to handle complex metric-semantic queries in 3D physical spaces.</p>
+  <p class="card-summary">MAPG proposes a multi-agent probabilistic grounding approach enabling robots to interpret complex metric-semantic language commands (e.g., 'two meters to the right of the fridge') in 3D environments. It addresses limitations of VLMs in reasoning about physically grounded metric constraints.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Swagat Padhan, Lakshya Jain, Bhavya Minesh Shah +3 more</span>
@@ -627,9 +627,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/fff8ce7c27c6dfd7/">ARIADNE combines DPO-aligned vision-language models with RL-based reasoning to i...</a>
+    <a href="/posts/fff8ce7c27c6dfd7/">ARIADNE combines DPO-aligned vision-language perception with RL-based diagnostic...</a>
   </h3>
-  <p class="card-summary">ARIADNE combines DPO-aligned vision-language models with RL-based reasoning to improve topological coherence in coronary vessel segmentation, addressing fragmentation failures in conventional pixel-wise approaches.</p>
+  <p class="card-summary">ARIADNE combines DPO-aligned vision-language perception with RL-based diagnostic reasoning to achieve topologically coherent coronary vessel segmentation and stenosis detection, addressing failures of pixel-wise loss functions in medical imaging.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Zhan Jin, Yu Luo, Yizhou Zhang +5 more</span>
@@ -680,9 +680,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/5007a5b4871c815b/">SOL-ExecBench introduces a 235-problem benchmark measuring GPU kernel optimizati...</a>
+    <a href="/posts/5007a5b4871c815b/">SOL-ExecBench introduces 235 CUDA kernel optimization problems benchmarked again...</a>
   </h3>
-  <p class="card-summary">SOL-ExecBench introduces a 235-problem benchmark measuring GPU kernel optimization against hardware speed-of-light limits rather than software baselines, targeting NVIDIA Blackwell GPUs across 124 production AI models.</p>
+  <p class="card-summary">SOL-ExecBench introduces 235 CUDA kernel optimization problems benchmarked against hardware speed-of-light limits on NVIDIA Blackwell GPUs, providing a more rigorous evaluation for agentic AI systems that generate and optimize GPU kernels.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Edward Lin, Sahil Modi, Siva Kumar Sastry Hari +30 more</span>
@@ -735,7 +735,7 @@
   <h3 class="card-title">
     <a href="/posts/db6902028ef31483/">Box Maze proposes a three-layer process-control architecture (memory grounding, ...</a>
   </h3>
-  <p class="card-summary">Box Maze proposes a three-layer process-control architecture (memory grounding, structured inference, boundary enforcement) to improve LLM reasoning reliability and resist adversarial hallucination.</p>
+  <p class="card-summary">Box Maze proposes a three-layer process-control architecture (memory grounding, structured inference, boundary enforcement) to improve LLM reasoning reliability and reduce hallucination at the architectural level rather than behavioral post-processing.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Zou Qiang</span>
@@ -786,9 +786,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/161898814805d0d9/">OS-Themis is a multi-agent critic framework that decomposes GUI agent trajectori...</a>
+    <a href="/posts/161898814805d0d9/">OS-Themis is a scalable multi-agent critic framework for GUI agent reward modeli...</a>
   </h3>
-  <p class="card-summary">OS-Themis is a multi-agent critic framework that decomposes GUI agent trajectories into verifiable milestones for scalable, accurate RL reward signals, paired with a new cross-platform benchmark OGRBench.</p>
+  <p class="card-summary">OS-Themis is a scalable multi-agent critic framework for GUI agent reward modeling that decomposes trajectories into verifiable milestones and introduces OGRBench, a cross-platform benchmark for evaluating GUI outcome rewards.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Zehao Li, Zhenyu Wu, Yibo Zhao +11 more</span>
@@ -811,7 +811,7 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -819,7 +819,7 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">6</span>
+  <span class="score-label">7</span>
 </span>
 
       
@@ -839,9 +839,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/0837fb3cb633182c/">A pure mathematics paper on R-equivalence for cubic surfaces over p-adic fields;...</a>
+    <a href="/posts/0837fb3cb633182c/">This paper addresses R-equivalence on cubic surfaces over p-adic fields, a pure ...</a>
   </h3>
-  <p class="card-summary">A pure mathematics paper on R-equivalence for cubic surfaces over p-adic fields; not related to AI or machine learning.</p>
+  <p class="card-summary">This paper addresses R-equivalence on cubic surfaces over p-adic fields, a pure algebraic geometry topic with no direct connection to AI or machine learning.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Dimitri Kanevsky, Julian Salazar, Matt Harvey</span>
@@ -892,9 +892,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/32de644ec9943041/">DreamPartGen generates semantically grounded, part-aware 3D objects from text by...</a>
+    <a href="/posts/32de644ec9943041/">DreamPartGen introduces Duplex Part Latents and Relational Semantic Latents to e...</a>
   </h3>
-  <p class="card-summary">DreamPartGen generates semantically grounded, part-aware 3D objects from text by jointly modeling geometry and appearance with relational semantic latents to capture inter-part structure.</p>
+  <p class="card-summary">DreamPartGen introduces Duplex Part Latents and Relational Semantic Latents to enable semantically grounded, part-aware text-to-3D generation that captures inter-part relationships and aligns geometry with textual descriptions.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Tianjiao Yu, Xinzhuo Li, Muntasir Wahed +4 more</span>
@@ -945,9 +945,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/6d0956eab2ffc030/">Nemotron-Cascade 2 is an open 30B MoE model (3B active parameters) achieving gol...</a>
+    <a href="/posts/6d0956eab2ffc030/">Nemotron-Cascade 2 is an open 30B MoE model (3B active params) achieving Gold Me...</a>
   </h3>
-  <p class="card-summary">Nemotron-Cascade 2 is an open 30B MoE model (3B active parameters) achieving gold-medal-level performance on IMO, IOI, and ICPC benchmarks, rivaling frontier models at 20x fewer parameters via cascade RL and multi-domain distillation.</p>
+  <p class="card-summary">Nemotron-Cascade 2 is an open 30B MoE model (3B active params) achieving Gold Medal-level performance on IMO, IOI, and ICPC using cascade RL and multi-domain on-policy distillation, delivering frontier reasoning at 20x fewer parameters than comparable models.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Zhuolin Yang, Zihan Liu, Yang Chen +14 more</span>
@@ -998,9 +998,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/1977e4634a30fac7/">F2LLM-v2 is a family of 8 multilingual embedding models (80M–14B) supporting 200...</a>
+    <a href="/posts/1977e4634a30fac7/">F2LLM-v2 is a family of 8 multilingual embedding models (80M–14B) covering 200+ ...</a>
   </h3>
-  <p class="card-summary">F2LLM-v2 is a family of 8 multilingual embedding models (80M–14B) supporting 200+ languages, achieving top MTEB rankings while improving efficiency through matryoshka learning, pruning, and knowledge distillation.</p>
+  <p class="card-summary">F2LLM-v2 is a family of 8 multilingual embedding models (80M–14B) covering 200+ languages, combining matryoshka learning, pruning, and knowledge distillation to rank first on 11 MTEB benchmarks while being more efficient than prior LLM-based embeddings.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Ziyin Zhang, Zihan Liao, Hang Yu +2 more</span>
@@ -1051,9 +1051,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/280d1a29a7046788/">FinTradeBench is a new LLM benchmark combining company fundamentals from regulat...</a>
+    <a href="/posts/280d1a29a7046788/">FinTradeBench is a financial reasoning benchmark for LLMs that integrates both c...</a>
   </h3>
-  <p class="card-summary">FinTradeBench is a new LLM benchmark combining company fundamentals from regulatory filings with trading signals to evaluate financial reasoning beyond simple balance-sheet QA.</p>
+  <p class="card-summary">FinTradeBench is a financial reasoning benchmark for LLMs that integrates both company fundamentals from regulatory filings and market trading signals, addressing gaps in existing financial QA benchmarks.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Yogesh Agrawal, Aniruddha Dutta, Md Mahadi Hasan +2 more</span>
@@ -1104,9 +1104,9 @@
     <span class="tag">arxiv</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/3875320ce6b76a39/">NavTrust systematically benchmarks embodied navigation agents (VLN and OGN) unde...</a>
+    <a href="/posts/3875320ce6b76a39/">NavTrust is the first unified benchmark systematically evaluating embodied navig...</a>
   </h3>
-  <p class="card-summary">NavTrust systematically benchmarks embodied navigation agents (VLN and OGN) under realistic input corruptions across RGB, depth, and instruction modalities to expose trustworthiness gaps.</p>
+  <p class="card-summary">NavTrust is the first unified benchmark systematically evaluating embodied navigation agent trustworthiness under realistic input corruptions (RGB, depth, instructions) for both Vision-Language Navigation and Object-Goal Navigation tasks.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Huaide Jiang, Yash Chaudhary, Yuping Wang +8 more</span>
@@ -1127,7 +1127,7 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -1137,7 +1137,7 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">5</span>
+  <span class="score-label">6</span>
 </span>
 
       
@@ -1157,9 +1157,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/14ab5e99e75fa3eb/">Zora is an AI agent framework that stores safety policies in a persistent file l...</a>
+    <a href="/posts/14ab5e99e75fa3eb/">Zora is an AI agent framework that stores safety policies in an external TOML fi...</a>
   </h3>
-  <p class="card-summary">Zora is an AI agent framework that stores safety policies in a persistent file loaded before every action, preventing constraint loss during context compaction — a real failure mode demonstrated by a Meta AI director's runaway email-deleting agent.</p>
+  <p class="card-summary">Zora is an AI agent framework that stores safety policies in an external TOML file loaded before every action, preventing constraints from being lost when context is compacted. Addresses a real failure mode where agents forget rules after context compression.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ryaker</span>
@@ -1212,65 +1212,12 @@
   <h3 class="card-title">
     <a href="/posts/e50970bf50e51a38/">Yansu is a proactive agent that observes user workflows across desktop, Slack, a...</a>
   </h3>
-  <p class="card-summary">Yansu is a proactive agent that observes user workflows across desktop, Slack, and Teams to autonomously build bespoke micro-apps before the user asks, eliminating reliance on bloated SaaS tools.</p>
+  <p class="card-summary">Yansu is a proactive agent that observes user workflows across desktop, Slack, and Teams, then autonomously builds bespoke micro-apps without being prompted. Represents a shift from reactive to anticipatory agent behavior.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>yubozhao</span>
       <span>&middot;</span>
       <span>2026-03-19</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/e50970bf50e51a38/">Read more &rarr;</a>
-      <a href="https://yansu.app/" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">hackernews</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/4252f0d8f8d4b504/">Bossa gives AI agents persistent filesystem access via MCP or CLI, enabling cros...</a>
-  </h3>
-  <p class="card-summary">Bossa gives AI agents persistent filesystem access via MCP or CLI, enabling cross-session memory through simple file operations rather than embeddings or vector retrieval pipelines.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>vinny380</span>
-      <span>&middot;</span>
-      <span>2026-03-22</span>
       
       <span>&middot;</span>
       
@@ -1302,6 +1249,59 @@
       
     </div>
     <div class="card-links">
+      <a href="/posts/e50970bf50e51a38/">Read more &rarr;</a>
+      <a href="https://yansu.app/" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/4252f0d8f8d4b504/">Bossa provides persistent filesystem memory for AI agents via MCP or CLI, lettin...</a>
+  </h3>
+  <p class="card-summary">Bossa provides persistent filesystem memory for AI agents via MCP or CLI, letting agents store and retrieve context across sessions using standard file operations like ls, grep, and read. Avoids embeddings by leveraging agents' existing ability to navigate filesystems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>vinny380</span>
+      <span>&middot;</span>
+      <span>2026-03-22</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">5</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
       <a href="/posts/4252f0d8f8d4b504/">Read more &rarr;</a>
       <a href="https://news.ycombinator.com/item?id=47478872" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
@@ -1316,9 +1316,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/5494d5ff29018545/">An Ask HN thread surveying how companies operationally manage internal custom AI...</a>
+    <a href="/posts/5494d5ff29018545/">An Ask HN discussion probing how companies operationally manage custom internal ...</a>
   </h3>
-  <p class="card-summary">An Ask HN thread surveying how companies operationally manage internal custom AI agents — covering agent counts, ownership, cost tracking, and change management processes.</p>
+  <p class="card-summary">An Ask HN discussion probing how companies operationally manage custom internal AI agents, covering ownership, cost tracking, and behavior change processes. Reflects growing enterprise need for agent governance practices.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>krsna_paulg</span>
@@ -1365,13 +1365,13 @@
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag tag-category">Industry News</span>
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/b706fba56b4d3963/">A concise open-source course teaching the full agent stack in 9 short lessons an...</a>
+    <a href="/posts/b706fba56b4d3963/">A browser-runnable, open-source 30-minute course teaching AI agent fundamentals ...</a>
   </h3>
-  <p class="card-summary">A concise open-source course teaching the full agent stack in 9 short lessons and ~60 lines of Python, running entirely in the browser with no setup required.</p>
+  <p class="card-summary">A browser-runnable, open-source 30-minute course teaching AI agent fundamentals through 9 short Python lessons covering tool calling, memory, state, and policy gates. Designed for minimal setup with optional live LLM via Groq.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ahd94</span>
@@ -1388,8 +1388,6 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot filled"></span>
-  
   <span class="dot"></span>
   
   <span class="dot"></span>
@@ -1402,7 +1400,9 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">4</span>
+  <span class="dot"></span>
+  
+  <span class="score-label">3</span>
 </span>
 
       
@@ -1422,9 +1422,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/a29c95f4c649eb4c/">Reticle is a Postman-style testing and evaluation tool for AI agents, letting de...</a>
+    <a href="/posts/a29c95f4c649eb4c/">Reticle is a debugging and evaluation tool for AI agents analogous to Postman, e...</a>
   </h3>
-  <p class="card-summary">Reticle is a Postman-style testing and evaluation tool for AI agents, letting developers run scenarios across models, inspect tool calls step-by-step, and run evals to catch prompt or model regressions.</p>
+  <p class="card-summary">Reticle is a debugging and evaluation tool for AI agents analogous to Postman, enabling prompt/model comparison, step-by-step run inspection, and regression evals against datasets. Targets the observability gap in LLM-based development workflows.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>alchaplinsky</span>
@@ -1475,9 +1475,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/fad228976fe02e3b/">A system using a genetic algorithm to evolve marketing copy by running it throug...</a>
+    <a href="/posts/fad228976fe02e3b/">A content generation system that uses a genetic algorithm across 100+ distinct L...</a>
   </h3>
-  <p class="card-summary">A system using a genetic algorithm to evolve marketing copy by running it through 100 distinct LLM personas, producing more creative and varied output than single-model generation.</p>
+  <p class="card-summary">A content generation system that uses a genetic algorithm across 100+ distinct LLM personas to produce more diverse and creative marketing copy. Addresses the homogeneity problem in single-model content generation.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>vignesh_warar</span>
@@ -1528,9 +1528,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/77c78b24a9343648/">P2PCLAW is a decentralized peer-to-peer research network where AI agents and hum...</a>
+    <a href="/posts/77c78b24a9343648/">P2PCLAW is a decentralized peer-to-peer network enabling AI agents and human res...</a>
   </h3>
-  <p class="card-summary">P2PCLAW is a decentralized peer-to-peer research network where AI agents and human researchers can discover each other, publish findings, and validate claims through formal mathematical proof rather than LLM consensus.</p>
+  <p class="card-summary">P2PCLAW is a decentralized peer-to-peer network enabling AI agents and human researchers to discover each other, publish findings, and validate claims via formal mathematical proof. Targets the isolation problem where every agent solves problems independently without shared knowledge.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>FranciscoAngulo</span>
@@ -1583,7 +1583,7 @@
   <h3 class="card-title">
     <a href="/posts/6115bf82c883dc09/">Sulcus reimagines AI memory as an active OS-like system with thermodynamic decay...</a>
   </h3>
-  <p class="card-summary">Sulcus reimagines AI memory as an active OS-like system with thermodynamic decay, reactive triggers, and memory heat scores — automating what agents remember or forget rather than relying on passive vector search.</p>
+  <p class="card-summary">Sulcus reimagines AI memory as an active OS-like system with thermodynamic decay, where memories have 'heat' based on recall frequency and automatically fade or get reinforced over time. Replaces passive vector DB retrieval with reactive, self-managing memory that notifies the agent proactively.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>mcdoolz</span>
@@ -1634,9 +1634,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/d0a4cf744d34a19c/">PearlOS is a browser-based AI desktop environment where a voice-controlled AI co...</a>
+    <a href="/posts/d0a4cf744d34a19c/">PearlOS is a browser-based desktop environment where an AI companion controls th...</a>
   </h3>
-  <p class="card-summary">PearlOS is a browser-based AI desktop environment where a voice-controlled AI companion manages windows, apps, and UI interactions, aiming to make full AI power accessible without a command line.</p>
+  <p class="card-summary">PearlOS is a browser-based desktop environment where an AI companion controls the full UI via voice, managing apps, windows, notes, and web search as a first-class desktop experience rather than a chat widget. Targets non-technical users who can't leverage AI via terminal or text interfaces.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>stephanieriggs</span>
@@ -1687,9 +1687,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/44cef0002af1675c/">Open-source persistent memory system for AI coding agents using hybrid retrieval...</a>
+    <a href="/posts/44cef0002af1675c/">ClawMem is an open-source persistent memory engine for AI coding agents that use...</a>
   </h3>
-  <p class="card-summary">Open-source persistent memory system for AI coding agents using hybrid retrieval (BM25+vector+RRF), compatible with Claude Code via hooks/MCP and shareable across agents via SQLite vault.</p>
+  <p class="card-summary">ClawMem is an open-source persistent memory engine for AI coding agents that uses a hybrid BM25+vector+RRF retrieval pipeline backed by a shared SQLite vault, with native Claude Code (MCP/hooks) and OpenClaw integration.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>yoloshii</span>
@@ -1712,7 +1712,7 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -1720,7 +1720,7 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">6</span>
+  <span class="score-label">7</span>
 </span>
 
       
@@ -1740,9 +1740,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/b5887ae3358e1014/">Open-source security proxy that prevents prompt injection attacks on AI agents v...</a>
+    <a href="/posts/b5887ae3358e1014/">FireClaw is an open-source security proxy that defends AI agents against prompt ...</a>
   </h3>
-  <p class="card-summary">Open-source security proxy that prevents prompt injection attacks on AI agents via a 4-stage pipeline including DNS blocklisting, structural sanitization, isolated LLM summarization, and output scanning.</p>
+  <p class="card-summary">FireClaw is an open-source security proxy that defends AI agents against prompt injection via a 4-stage pipeline: DNS blocklist, structural sanitization, isolated LLM summarization, and output scanning.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>raiph_ai</span>
@@ -1793,9 +1793,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/f6e2c71569143937/">Lightweight open spec (AUI) that makes web apps agent-navigable by exposing URL-...</a>
+    <a href="/posts/f6e2c71569143937/">Agent Use Interface (AUI) is a lightweight open spec that makes URL-parameter-dr...</a>
   </h3>
-  <p class="card-summary">Lightweight open spec (AUI) that makes web apps agent-navigable by exposing URL-parameter-driven actions via an XML file at /agents/aui.xml, as a simpler alternative to MCP or A2A.</p>
+  <p class="card-summary">Agent Use Interface (AUI) is a lightweight open spec that makes URL-parameter-driven apps agent-navigable by dropping an XML descriptor at /agents/aui.xml, positioned as a simpler alternative to MCP or A2A.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>FernandoDev</span>
@@ -1816,7 +1816,7 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -1826,7 +1826,7 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">5</span>
+  <span class="score-label">6</span>
 </span>
 
       
@@ -1846,9 +1846,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/fe97d9b292a54adb/">Simple open-source tool for sharing prompts, links, and todo lists with AI agent...</a>
+    <a href="/posts/fe97d9b292a54adb/">Dump is a simple open-source tool that converts prompts, links, and notes into a...</a>
   </h3>
-  <p class="card-summary">Simple open-source tool for sharing prompts, links, and todo lists with AI agents outside the context window, converting board content into llms.txt files.</p>
+  <p class="card-summary">Dump is a simple open-source tool that converts prompts, links, and notes into a spatially-sorted llms.txt file, enabling context sharing across AI agents like Claude and ChatGPT outside the context window.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>vochsel</span>
@@ -1899,9 +1899,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/d3f29a8c1f3789a6/">Open-source Obsidian plugin that spawns CLI agents (Claude Code, Gemini CLI, etc...</a>
+    <a href="/posts/d3f29a8c1f3789a6/">Agentic Copilot is an MIT-licensed Obsidian plugin that spawns Claude Code, Open...</a>
   </h3>
-  <p class="card-summary">Open-source Obsidian plugin that spawns CLI agents (Claude Code, Gemini CLI, etc.) as child processes and streams vault context into prompts without requiring API key configuration.</p>
+  <p class="card-summary">Agentic Copilot is an MIT-licensed Obsidian plugin that spawns Claude Code, OpenCode, or any custom CLI agent as a child process, piping vault context into prompts and streaming responses into a chat panel.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>mrxdev</span>
@@ -1952,9 +1952,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/753f733f82caf9e7/">Open-source agentic data engineering harness that adds dbt lineage, schema conte...</a>
+    <a href="/posts/753f733f82caf9e7/">Altimate Code is an open-source agentic data engineering harness that augments S...</a>
   </h3>
-  <p class="card-summary">Open-source agentic data engineering harness that adds dbt lineage, schema context, and manifest understanding to address the well-documented 27-33% hallucinated table reference problem in AI-generated SQL.</p>
+  <p class="card-summary">Altimate Code is an open-source agentic data engineering harness that augments SQL/dbt agents with schema lineage and manifest context, addressing the finding that 27-33% of AI-generated SQL references non-existent tables.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>aaur0</span>
@@ -2005,9 +2005,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/43e7dbaf3f012707/">A non-developer built a production multi-piece AI edge agent (Brain/Hands/Voice ...</a>
+    <a href="/posts/43e7dbaf3f012707/">A non-developer built a split-architecture AI edge agent (Brain/Hands/Voice on N...</a>
   </h3>
-  <p class="card-summary">A non-developer built a production multi-piece AI edge agent (Brain/Hands/Voice architecture) to replace their business website, successfully deflecting adversarial testing by a licensed architect.</p>
+  <p class="card-summary">A non-developer built a split-architecture AI edge agent (Brain/Hands/Voice on Netlify) to replace their consultancy website, reporting it successfully handled adversarial queries from a licensed architect.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>axotopia</span>
@@ -2058,9 +2058,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/e4e469f31c04b201/">YC W26 startup offering a data-driven platform to help brands improve visibility...</a>
+    <a href="/posts/e4e469f31c04b201/">Sitefire (YC W26) is a platform that helps brands improve visibility in AI searc...</a>
   </h3>
-  <p class="card-summary">YC W26 startup offering a data-driven platform to help brands improve visibility in AI search results as Google AI Overviews erode traditional organic web traffic.</p>
+  <p class="card-summary">Sitefire (YC W26) is a platform that helps brands improve visibility in AI search (GEO) by automating content and structural optimizations, responding to traffic declines caused by Google AI Overviews.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>vincko</span>
@@ -2111,9 +2111,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/c7389e7b8212355b/">Peer-to-peer network where AI agents publish scientific results validated by for...</a>
+    <a href="/posts/c7389e7b8212355b/">P2PCLAW is a P2P network where AI agents publish scientific results that are val...</a>
   </h3>
-  <p class="card-summary">Peer-to-peer network where AI agents publish scientific results validated by formal Lean 4 mathematical proofs rather than LLM review, enabling verifiable agent-to-agent knowledge accumulation.</p>
+  <p class="card-summary">P2PCLAW is a P2P network where AI agents publish scientific results that are validated only via formal Lean 4 mathematical proofs, creating a shared, verifiable knowledge layer across agents.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>FranciscoAngulo</span>
@@ -2164,9 +2164,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/a1fcb852628f7aa9/">Budibase launches model-agnostic AI agents beta supporting any OpenAI-compatible...</a>
+    <a href="/posts/a1fcb852628f7aa9/">Budibase has launched an open-source, model-agnostic AI agents beta that integra...</a>
   </h3>
-  <p class="card-summary">Budibase launches model-agnostic AI agents beta supporting any OpenAI-compatible LLM for internal workflow automation, with explicit user control over data sources and APIs.</p>
+  <p class="card-summary">Budibase has launched an open-source, model-agnostic AI agents beta that integrates with any OpenAI-compatible LLM and connects agents to existing data sources, APIs, and automations within its app-building platform.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>mjashanks</span>
@@ -2217,9 +2217,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/1411240e89fc0ae7/">Security researchers demonstrate LLM agents capable of SIEM and EDR evasion, sig...</a>
+    <a href="/posts/1411240e89fc0ae7/">Researchers demonstrate LLM agents capable of SIEM and EDR evasion, signaling th...</a>
   </h3>
-  <p class="card-summary">Security researchers demonstrate LLM agents capable of SIEM and EDR evasion, signaling a new threat frontier where adversaries may soon leverage AI for security tool bypass.</p>
+  <p class="card-summary">Researchers demonstrate LLM agents capable of SIEM and EDR evasion, signaling that adversarial AI-assisted security evasion is becoming a near-term organizational threat.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>danieltk76</span>
@@ -2266,13 +2266,13 @@
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
+    <span class="tag tag-category">Research Papers</span>
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/9b21cde79c3d20cd/">A developer built a March Madness bracket prediction eval across top LLMs, revea...</a>
+    <a href="/posts/9b21cde79c3d20cd/">An informal eval benchmarks top LLMs on March Madness bracket prediction, reveal...</a>
   </h3>
-  <p class="card-summary">A developer built a March Madness bracket prediction eval across top LLMs, revealing massive cost disparities — Claude models spent $40+ vs $0.39 for cheaper alternatives — with most models favoring chalk picks.</p>
+  <p class="card-summary">An informal eval benchmarks top LLMs on March Madness bracket prediction, revealing large cost disparities (Claude models ~$40 vs MiMo-V2-Flash ~$0.39) with similar agentic outputs.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>rjkeck2</span>
@@ -2291,8 +2291,6 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot filled"></span>
-  
   <span class="dot"></span>
   
   <span class="dot"></span>
@@ -2303,7 +2301,9 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">5</span>
+  <span class="dot"></span>
+  
+  <span class="score-label">4</span>
 </span>
 
       
@@ -2323,9 +2323,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/a656cff6b52dceba/">MUP (Model UI Protocol) embeds interactive UI directly in LLM chat via single HT...</a>
+    <a href="/posts/a656cff6b52dceba/">MUP (Model UI Protocol) embeds interactive HTML UI components directly in LLM ch...</a>
   </h3>
-  <p class="card-summary">MUP (Model UI Protocol) embeds interactive UI directly in LLM chat via single HTML files, enabling both users and LLMs to trigger the same functions with real-time visibility into each other's actions.</p>
+  <p class="card-summary">MUP (Model UI Protocol) embeds interactive HTML UI components directly in LLM chat, enabling shared human-LLM interaction with reusable UI primitives rather than generated code.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Ricky_Tsou</span>
@@ -2376,9 +2376,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/6874be1d1673ff52/">A Python beginner with no web dev experience built and deployed an AI-powered re...</a>
+    <a href="/posts/6874be1d1673ff52/">A Python beginner with no web dev experience built and deployed a resume tailori...</a>
   </h3>
-  <p class="card-summary">A Python beginner with no web dev experience built and deployed an AI-powered resume tailoring app using coding agents iteratively over several months.</p>
+  <p class="card-summary">A Python beginner with no web dev experience built and deployed a resume tailoring web app iteratively using AI coding agents, demonstrating agentic development accessibility.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>KasparSoukup</span>
@@ -2429,9 +2429,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/fe6f1a783a0411cd/">MUP proposes reusable pre-built HTML UI components that LLMs invoke via function...</a>
+    <a href="/posts/fe6f1a783a0411cd/">MUP introduces pre-built reusable HTML UI components callable by LLMs via functi...</a>
   </h3>
-  <p class="card-summary">MUP proposes reusable pre-built HTML UI components that LLMs invoke via function calls rather than regenerating UI code each conversation, reducing token waste and fragility.</p>
+  <p class="card-summary">MUP introduces pre-built reusable HTML UI components callable by LLMs via function calls, eliminating redundant UI code generation and enabling persistent LLM-visible interactive state.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Ricky_Tsou</span>
@@ -2482,9 +2482,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/b1d7992115abf115/">A sandbox system pits multiple AI agents against each other in debate to answer ...</a>
+    <a href="/posts/b1d7992115abf115/">A multi-agent debate sandbox pits AI agents against hard or paradoxical question...</a>
   </h3>
-  <p class="card-summary">A sandbox system pits multiple AI agents against each other in debate to answer questions that typically stump or produce refusals from standard LLMs.</p>
+  <p class="card-summary">A multi-agent debate sandbox pits AI agents against hard or paradoxical questions, using search and adversarial reasoning rather than refusals to reach answers.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ttlcc13</span>
@@ -2535,9 +2535,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/b21cb99879852910/">Votal AI released an open-source white-box agentic red teamer that uses an agent...</a>
+    <a href="/posts/b21cb99879852910/">Votal AI releases an open-source white-box agentic red teaming framework that in...</a>
   </h3>
-  <p class="card-summary">Votal AI released an open-source white-box agentic red teamer that uses an agent's architecture, tool definitions, and role config to generate targeted multi-turn attack sequences against AI agents.</p>
+  <p class="card-summary">Votal AI releases an open-source white-box agentic red teaming framework that ingests an agent's tool definitions and architecture to generate targeted multi-turn attack sequences.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ashish-a</span>
@@ -2590,7 +2590,7 @@
   <h3 class="card-title">
     <a href="/posts/dff732873e98024b/">Veto is a permission policy engine and LLM firewall designed to govern and restr...</a>
   </h3>
-  <p class="card-summary">Veto is a permission policy engine and LLM firewall designed to govern and restrict actions taken by AI coding agents.</p>
+  <p class="card-summary">Veto is a permission policy engine and LLM firewall designed to govern and restrict actions taken by AI coding agents at runtime.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>damienhauser</span>
@@ -2641,9 +2641,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/4135f0b8e7875b73/">TMA1 is a local-first, open-source observability tool for LLM agents that tracks...</a>
+    <a href="/posts/4135f0b8e7875b73/">TMA1 is a local-first, open-source observability tool for LLM agents that captur...</a>
   </h3>
-  <p class="card-summary">TMA1 is a local-first, open-source observability tool for LLM agents that tracks token usage, tool calls, latency, failures, and full session replays without sending data to any cloud service.</p>
+  <p class="card-summary">TMA1 is a local-first, open-source observability tool for LLM agents that captures token usage, tool calls, latency, and full session replays without sending data to the cloud.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>killme2008</span>
@@ -2694,9 +2694,9 @@
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/cecf8841ef1b8942/">N0x runs a full AI stack — LLM inference via WebGPU, ReAct agents, RAG, and sand...</a>
+    <a href="/posts/cecf8841ef1b8942/">N0x runs full LLM inference, ReAct agents, RAG, and sandboxed Python execution e...</a>
   </h3>
-  <p class="card-summary">N0x runs a full AI stack — LLM inference via WebGPU, ReAct agents, RAG, and sandboxed Python execution — entirely in the browser with no backend, account, or API keys required.</p>
+  <p class="card-summary">N0x runs full LLM inference, ReAct agents, RAG, and sandboxed Python execution entirely in the browser via WebGPU and Pyodide, requiring no backend, account, or API keys.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>redhanuman</span>
@@ -2747,9 +2747,9 @@
     <span class="tag">google_ai</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/190e8f5637a325f9/">Google AI Blog post on AI security, likely covering safety practices or threat m...</a>
+    <a href="/posts/190e8f5637a325f9/">Google AI Blog post about security, likely related to AI safety or privacy featu...</a>
   </h3>
-  <p class="card-summary">Google AI Blog post on AI security, likely covering safety practices or threat mitigations based on imagery. Content is image-only with no substantive detail.</p>
+  <p class="card-summary">Google AI Blog post about security, likely related to AI safety or privacy features. Limited content available from the image description.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Google AI Blog</span>
@@ -2800,9 +2800,9 @@
     <span class="tag">google_ai</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/c958f661b94aac13/">Google introduces a 'Personal Intelligence' feature integrating Google Photos, G...</a>
+    <a href="/posts/c958f661b94aac13/">Google is developing a 'Personal Intelligence' feature integrating Google Photos...</a>
   </h3>
-  <p class="card-summary">Google introduces a 'Personal Intelligence' feature integrating Google Photos, Gmail, and the Google Assistant into a unified personal AI experience. Content is image-only with limited detail.</p>
+  <p class="card-summary">Google is developing a 'Personal Intelligence' feature integrating Google Photos and Gmail, suggesting on-device or personalized AI capabilities.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>Google AI Blog</span>
@@ -2853,9 +2853,9 @@
     <span class="tag">openai_blog</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/ad2761a224f860f5/">OpenAI research finds Americans send nearly 3 million daily messages to ChatGPT ...</a>
+    <a href="/posts/ad2761a224f860f5/">OpenAI research finds Americans send ~3 million daily ChatGPT messages about wag...</a>
   </h3>
-  <p class="card-summary">OpenAI research finds Americans send nearly 3 million daily messages to ChatGPT about wages and compensation, suggesting LLMs are helping close the wage information gap.</p>
+  <p class="card-summary">OpenAI research finds Americans send ~3 million daily ChatGPT messages about wages and compensation, positioning AI as a tool for closing wage information gaps.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>OpenAI Blog</span>
@@ -2906,9 +2906,9 @@
     <span class="tag">openai_blog</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/58de471797215e51/">OpenAI Japan launches the Japan Teen Safety Blueprint with age verification, par...</a>
+    <a href="/posts/58de471797215e51/">OpenAI Japan launches the Japan Teen Safety Blueprint introducing age verificati...</a>
   </h3>
-  <p class="card-summary">OpenAI Japan launches the Japan Teen Safety Blueprint with age verification, parental controls, and well-being safeguards for minors using generative AI.</p>
+  <p class="card-summary">OpenAI Japan launches the Japan Teen Safety Blueprint introducing age verification, parental controls, and well-being safeguards for teen users of generative AI.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>OpenAI Blog</span>
@@ -2961,7 +2961,7 @@
   <h3 class="card-title">
     <a href="/posts/d65b56e55a361d1a/">OpenAI releases GPT-5.4 mini and nano, smaller and faster variants optimized for...</a>
   </h3>
-  <p class="card-summary">OpenAI releases GPT-5.4 mini and nano, smaller and faster variants optimized for coding, tool use, multimodal reasoning, and high-throughput sub-agent workloads.</p>
+  <p class="card-summary">OpenAI releases GPT-5.4 mini and nano, smaller and faster variants optimized for coding, tool use, multimodal reasoning, and high-volume sub-agent workloads.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>OpenAI Blog</span>
@@ -3012,9 +3012,9 @@
     <span class="tag">openai_blog</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/a504a4559e8512bb/">OpenAI is expanding its Codex program to accelerate the next generation of Pytho...</a>
+    <a href="/posts/a504a4559e8512bb/">OpenAI accelerates Codex growth to power the next generation of Python developer...</a>
   </h3>
-  <p class="card-summary">OpenAI is expanding its Codex program to accelerate the next generation of Python developer tooling, signaling deeper investment in AI-assisted coding infrastructure.</p>
+  <p class="card-summary">OpenAI accelerates Codex growth to power the next generation of Python developer tooling, expanding AI-assisted coding infrastructure.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>OpenAI Blog</span>
@@ -3065,9 +3065,9 @@
     <span class="tag">openai_blog</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/e0155a2411913b69/">OpenAI details how chain-of-thought monitoring is used to detect misalignment an...</a>
+    <a href="/posts/e0155a2411913b69/">OpenAI details how chain-of-thought monitoring is used to detect misalignment in...</a>
   </h3>
-  <p class="card-summary">OpenAI details how chain-of-thought monitoring is used to detect misalignment and risky behaviors in internal coding agents deployed in real-world settings, advancing AI safety methodology.</p>
+  <p class="card-summary">OpenAI details how chain-of-thought monitoring is used to detect misalignment in internal coding agents, offering insights into real-world AI safety practices.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>OpenAI Blog</span>
@@ -3115,17 +3115,123 @@
 <div class="card">
   <div class="card-tags">
     <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@ArizeAI</span>
+    <span class="tag">@llama_index</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/fe21451caf1e2ba6/">Arize AX integrates NVIDIA NIM as a native model provider, combining NVIDIA's in...</a>
+    <a href="/posts/78271bcf2e248db7/">LlamaIndex introduces visual grounding with bounding box citations in LlamaParse...</a>
   </h3>
-  <p class="card-summary">Arize AX integrates NVIDIA NIM as a native model provider, combining NVIDIA's inference performance with Arize's evaluation and improvement workflows without requiring custom endpoints.</p>
+  <p class="card-summary">LlamaIndex introduces visual grounding with bounding box citations in LlamaParse to verify document parsing outputs against source content.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>ArizeAI</span>
+      <span>llama_index</span>
       <span>&middot;</span>
-      <span>2026-03-16</span>
+      <span>2026-03-17</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/78271bcf2e248db7/">Read more &rarr;</a>
+      <a href="https://x.com/llama_index/status/2033937482577023103" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">@llama_index</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/15b6fd6e9d375fcc/">LlamaParse Agentic Plus mode adds precise bounding-box visual grounding for comp...</a>
+  </h3>
+  <p class="card-summary">LlamaParse Agentic Plus mode adds precise bounding-box visual grounding for complex document elements including LaTeX formulas and challenging visual content.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>llama_index</span>
+      <span>&middot;</span>
+      <span>2026-03-18</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/15b6fd6e9d375fcc/">Read more &rarr;</a>
+      <a href="https://x.com/llama_index/status/2034300076441633276" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">@llama_index</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/d268e963de3d77df/">LlamaIndex advocates for 'context engineering' over prompt engineering, emphasiz...</a>
+  </h3>
+  <p class="card-summary">LlamaIndex advocates for 'context engineering' over prompt engineering, emphasizing correct data parsing as foundational to building effective AI agents.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>llama_index</span>
+      <span>&middot;</span>
+      <span>2026-03-18</span>
       
       <span>&middot;</span>
       
@@ -3157,8 +3263,8 @@
       
     </div>
     <div class="card-links">
-      <a href="/posts/fe21451caf1e2ba6/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2033642225415176374" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/d268e963de3d77df/">Read more &rarr;</a>
+      <a href="https://x.com/llama_index/status/2034347384973762694" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -3167,18 +3273,124 @@
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@ArizeAI</span>
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@llama_index</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/574e4cf29ee3d988/">Arize presents 'Prompt Learning,' a technique to systematically improve coding a...</a>
+    <a href="/posts/b4ae154ba5c0ba13/">LlamaIndex identifies visual grounding as a key weakness in frontier models (Gem...</a>
   </h3>
-  <p class="card-summary">Arize presents 'Prompt Learning,' a technique to systematically improve coding agent performance by up to 20% through optimizing context files like CLAUDE.md or .cursorrules without changing the underlying model.</p>
+  <p class="card-summary">LlamaIndex identifies visual grounding as a key weakness in frontier models (Gemini, Opus, GPT) for document OCR, noting poor positional awareness on pages. They claim significant improvements in their own models to address this gap.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>ArizeAI</span>
+      <span>llama_index</span>
       <span>&middot;</span>
-      <span>2026-03-17</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">5</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/b4ae154ba5c0ba13/">Read more &rarr;</a>
+      <a href="https://x.com/jerryjliu0/status/2034440027661566175" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Industry News</span>
+    <span class="tag">@llama_index</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/e6943f653a7c4b44/">LlamaIndex is open-sourcing LiteParse, a lightweight document parsing library di...</a>
+  </h3>
+  <p class="card-summary">LlamaIndex is open-sourcing LiteParse, a lightweight document parsing library distilled from their production LlamaParse technology. The release targets fast, efficient parsing without the overhead of full ML models.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>llama_index</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/e6943f653a7c4b44/">Read more &rarr;</a>
+      <a href="https://x.com/llama_index/status/2034661997644808638" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Industry News</span>
+    <span class="tag">@llama_index</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/b0cc05f7033610f1/">LiteParse is a free, open-source, model-free document parsing tool that processe...</a>
+  </h3>
+  <p class="card-summary">LiteParse is a free, open-source, model-free document parsing tool that processes ~500 pages in 2 seconds on commodity hardware with no GPU required. It claims higher accuracy and readability than PyPDF, PyMuPDF, and Markdown-based parsers.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>llama_index</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
       
       <span>&middot;</span>
       
@@ -3210,8 +3422,61 @@
       
     </div>
     <div class="card-links">
-      <a href="/posts/574e4cf29ee3d988/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2033936582923980869" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/b0cc05f7033610f1/">Read more &rarr;</a>
+      <a href="https://x.com/jerryjliu0/status/2034665976428724267" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Industry News</span>
+    <span class="tag">@ArizeAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/fe21451caf1e2ba6/">Arize AX now natively integrates NVIDIA NIM as an AI model provider, combining N...</a>
+  </h3>
+  <p class="card-summary">Arize AX now natively integrates NVIDIA NIM as an AI model provider, combining NVIDIA's inference performance with Arize's evaluation and improvement workflows without requiring custom endpoint configuration.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>ArizeAI</span>
+      <span>&middot;</span>
+      <span>2026-03-16</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">4</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/fe21451caf1e2ba6/">Read more &rarr;</a>
+      <a href="https://x.com/arizeai/status/2033642225415176374" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -3224,9 +3489,62 @@
     <span class="tag">@ArizeAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/127173ee11c34838/">ArizeAI shared a repository link with no accompanying context or description.</a>
+    <a href="/posts/574e4cf29ee3d988/">Arize published a talk on 'Prompt Learning,' a technique to systematically impro...</a>
   </h3>
-  <p class="card-summary">ArizeAI shared a repository link with no accompanying context or description.</p>
+  <p class="card-summary">Arize published a talk on 'Prompt Learning,' a technique to systematically improve coding agent instructions (CLAUDE.md, .cursorrules) that reportedly boosts agent performance by 20% without changing the underlying model.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>ArizeAI</span>
+      <span>&middot;</span>
+      <span>2026-03-17</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/574e4cf29ee3d988/">Read more &rarr;</a>
+      <a href="https://x.com/arizeai/status/2033936582923980869" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Industry News</span>
+    <span class="tag">@ArizeAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/127173ee11c34838/">Incomplete post containing only 'Repo:' with no additional context or content.</a>
+  </h3>
+  <p class="card-summary">Incomplete post containing only 'Repo:' with no additional context or content.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ArizeAI</span>
@@ -3277,9 +3595,9 @@
     <span class="tag">@ArizeAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/2c2f902a86ec2c13/">ArizeAI shares insight that agents optimize effectively for given objectives but...</a>
+    <a href="/posts/2c2f902a86ec2c13/">Arize observes that AI agents optimize effectively toward given goals but lack t...</a>
   </h3>
-  <p class="card-summary">ArizeAI shares insight that agents optimize effectively for given objectives but lack the judgment to assess whether the objective itself is correct, illustrated via an AI newsletter generator experiment using evals.</p>
+  <p class="card-summary">Arize observes that AI agents optimize effectively toward given goals but lack the ability to self-assess whether those goals are correct, illustrated via their open-source AI newsletter generator experiment using evals for iterative improvement.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>ArizeAI</span>
@@ -3300,8 +3618,6 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot filled"></span>
-  
   <span class="dot"></span>
   
   <span class="dot"></span>
@@ -3310,7 +3626,9 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">6</span>
+  <span class="dot"></span>
+  
+  <span class="score-label">5</span>
 </span>
 
       
@@ -3327,68 +3645,15 @@
 <div class="card">
   <div class="card-tags">
     <span class="tag tag-category">Industry News</span>
-    <span class="tag">@ArizeAI</span>
+    <span class="tag">@GoogleAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/e3b1d22318c57a8d/">ArizeAI announces a webinar session on meta-evaluation — the practice of evaluat...</a>
+    <a href="/posts/e1b97436e5a26b94/">GoogleAI posted a reaction emoji with no substantive content.</a>
   </h3>
-  <p class="card-summary">ArizeAI announces a webinar session on meta-evaluation — the practice of evaluating LLM judges themselves — going beyond basic LLM-as-a-Judge fundamentals.</p>
+  <p class="card-summary">GoogleAI posted a reaction emoji with no substantive content.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>ArizeAI</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/e3b1d22318c57a8d/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2033999713968787699" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@ArizeAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/7e45f14c9da52b81/">ArizeAI releases a Prompt Tutorial for their AX platform enabling a repeatable c...</a>
-  </h3>
-  <p class="card-summary">ArizeAI releases a Prompt Tutorial for their AX platform enabling a repeatable create-test-optimize loop grounded in real data and evaluation metrics rather than subjective feel.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>ArizeAI</span>
+      <span>GoogleAI</span>
       <span>&middot;</span>
       <span>2026-03-18</span>
       
@@ -3398,14 +3663,6 @@
   
   <span class="dot filled"></span>
   
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
   <span class="dot"></span>
   
   <span class="dot"></span>
@@ -3416,14 +3673,22 @@
   
   <span class="dot"></span>
   
-  <span class="score-label">5</span>
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">1</span>
 </span>
 
       
     </div>
     <div class="card-links">
-      <a href="/posts/7e45f14c9da52b81/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2034304839799411024" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/e1b97436e5a26b94/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleAI/status/2034298505481666876" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -3433,653 +3698,17 @@
 <div class="card">
   <div class="card-tags">
     <span class="tag tag-category">Industry News</span>
-    <span class="tag">@ArizeAI</span>
+    <span class="tag">@perplexity_ai</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/c19a82c2bddcdd85/">ArizeAI promotes their presence at NVIDIA GTC, showcasing tools for debugging, e...</a>
+    <a href="/posts/708da896f8007470/">Perplexity's Comet Enterprise product is gaining enterprise traction with notabl...</a>
   </h3>
-  <p class="card-summary">ArizeAI promotes their presence at NVIDIA GTC, showcasing tools for debugging, evaluating, and iterating on LLMs and agents in production.</p>
+  <p class="card-summary">Perplexity's Comet Enterprise product is gaining enterprise traction with notable customers including Fortune, AWS, AlixPartners, Gunderson Dettmer, and Bessemer Venture Partners.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>ArizeAI</span>
-      <span>&middot;</span>
-      <span>2026-03-18</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">3</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/c19a82c2bddcdd85/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2034334583106458046" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@ArizeAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/afe0aa220977a1e3/">ArizeAI details practical context window management strategies for AI agents, in...</a>
-  </h3>
-  <p class="card-summary">ArizeAI details practical context window management strategies for AI agents, including middle truncation and retrieval-based memory, learned while building their Alyx agent.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>ArizeAI</span>
-      <span>&middot;</span>
-      <span>2026-03-19</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">6</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/afe0aa220977a1e3/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2034668384865136818" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@ArizeAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/343d8eb0baf73a51/">ArizeAI and Google Cloud are co-hosting a technical event in NYC on March 30 cov...</a>
-  </h3>
-  <p class="card-summary">ArizeAI and Google Cloud are co-hosting a technical event in NYC on March 30 covering the full agent lifecycle from architecture through evaluation to production operations.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>ArizeAI</span>
-      <span>&middot;</span>
-      <span>2026-03-21</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">3</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/343d8eb0baf73a51/">Read more &rarr;</a>
-      <a href="https://x.com/arizeai/status/2035155334826963208" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@langfuse</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/d07b7aa50bf5a426/">Langfuse v4 is released with significant performance improvements to the open-so...</a>
-  </h3>
-  <p class="card-summary">Langfuse v4 is released with significant performance improvements to the open-source LLM observability and tracing platform.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>langfuse</span>
+      <span>perplexity_ai</span>
       <span>&middot;</span>
       <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">7</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/d07b7aa50bf5a426/">Read more &rarr;</a>
-      <a href="https://x.com/langfuse/status/2033906966574006774" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@GoogleDeepMind</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/2708c359ef0936e7/">Google DeepMind highlights that the AlphaFold database has been used by over 3.3...</a>
-  </h3>
-  <p class="card-summary">Google DeepMind highlights that the AlphaFold database has been used by over 3.3 million researchers worldwide, underscoring AI's transformative impact on scientific discovery.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>GoogleDeepMind</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">7</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/2708c359ef0936e7/">Read more &rarr;</a>
-      <a href="https://x.com/pushmeet/status/2033856861120745486" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Model Releases</span>
-    <span class="tag">@GoogleDeepMind</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/7101b79557d6eff3/">Google AI Studio receives a major upgrade adding real-time multiplayer collabora...</a>
-  </h3>
-  <p class="card-summary">Google AI Studio receives a major upgrade adding real-time multiplayer collaboration, live data service connections, persistent builds, and modern UI framework support for vibe coding.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>GoogleDeepMind</span>
-      <span>&middot;</span>
-      <span>2026-03-19</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">6</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/7101b79557d6eff3/">Read more &rarr;</a>
-      <a href="https://x.com/GoogleAIStudio/status/2034655113961455651" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@GoogleDeepMind</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/8af7a31b6955806d/">Google DeepMind's AlphaProof and AlphaGeometry paper is published in Nature, doc...</a>
-  </h3>
-  <p class="card-summary">Google DeepMind's AlphaProof and AlphaGeometry paper is published in Nature, documenting how their proof agents achieved silver-medal performance on International Mathematical Olympiad problems in 2024.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>GoogleDeepMind</span>
-      <span>&middot;</span>
-      <span>2026-03-20</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">8</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/8af7a31b6955806d/">Read more &rarr;</a>
-      <a href="https://x.com/pushmeet/status/2034995752963809700" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@GoogleDeepMind</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/2dc3cad6e375a347/">Google DeepMind and Kaggle are launching a global hackathon with $200k in prizes...</a>
-  </h3>
-  <p class="card-summary">Google DeepMind and Kaggle are launching a global hackathon with $200k in prizes to crowdsource new cognitive evaluations for measuring progress toward AGI.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>GoogleDeepMind</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">7</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/2dc3cad6e375a347/">Read more &rarr;</a>
-      <a href="https://x.com/GoogleDeepMind/status/2034014385941975298" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Model Releases</span>
-    <span class="tag">@OpenAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/b6cb941b061f80d4/">OpenAI released GPT-5.4 nano via API, the smallest model in the GPT-5.4 family.</a>
-  </h3>
-  <p class="card-summary">OpenAI released GPT-5.4 nano via API, the smallest model in the GPT-5.4 family.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>OpenAI</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">6</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/b6cb941b061f80d4/">Read more &rarr;</a>
-      <a href="https://x.com/OpenAI/status/2033953595637538849" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Model Releases</span>
-    <span class="tag">@OpenAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/24b37802a52f0b5c/">OpenAI released GPT-5.4 mini, optimized for coding, computer use, multimodal tas...</a>
-  </h3>
-  <p class="card-summary">OpenAI released GPT-5.4 mini, optimized for coding, computer use, multimodal tasks, and subagents, running 2x faster than GPT-5 mini.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>OpenAI</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">7</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/24b37802a52f0b5c/">Read more &rarr;</a>
-      <a href="https://x.com/OpenAI/status/2033953592424731072" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@OpenAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/f2069474943bdcb6/">OpenAI launched 'Parameter Golf,' an interactive challenge inviting users to exp...</a>
-  </h3>
-  <p class="card-summary">OpenAI launched 'Parameter Golf,' an interactive challenge inviting users to explore model efficiency and parameter optimization.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>OpenAI</span>
-      <span>&middot;</span>
-      <span>2026-03-18</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">3</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/f2069474943bdcb6/">Read more &rarr;</a>
-      <a href="https://x.com/OpenAI/status/2034315401438580953" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@OpenAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/ace52f96dc5dd82f/">An OpenAI researcher shares that the company now monitors 99.9% of internal codi...</a>
-  </h3>
-  <p class="card-summary">An OpenAI researcher shares that the company now monitors 99.9% of internal coding traffic using its most powerful models to detect AI misalignment and suspicious behavior in full agent trajectories.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>OpenAI</span>
-      <span>&middot;</span>
-      <span>2026-03-19</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">8</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/ace52f96dc5dd82f/">Read more &rarr;</a>
-      <a href="https://x.com/Marcus_J_W/status/2034677345681068140" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@OpenAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/c7ffe2284b7716c7/">OpenAI is offering U.S. and Canadian college students $100 in Codex credits to e...</a>
-  </h3>
-  <p class="card-summary">OpenAI is offering U.S. and Canadian college students $100 in Codex credits to encourage learning through hands-on AI-assisted coding.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>OpenAI</span>
-      <span>&middot;</span>
-      <span>2026-03-20</span>
       
       <span>&middot;</span>
       
@@ -4111,220 +3740,8 @@
       
     </div>
     <div class="card-links">
-      <a href="/posts/c7ffe2284b7716c7/">Read more &rarr;</a>
-      <a href="https://x.com/OpenAIDevs/status/2035033703274201109" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@AnthropicAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/92bab4ff78f99c38/">Anthropic is donating to the Linux Foundation to help secure open source infrast...</a>
-  </h3>
-  <p class="card-summary">Anthropic is donating to the Linux Foundation to help secure open source infrastructure that AI systems depend on.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>AnthropicAI</span>
-      <span>&middot;</span>
-      <span>2026-03-17</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/92bab4ff78f99c38/">Read more &rarr;</a>
-      <a href="https://x.com/AnthropicAI/status/2033939283313402138" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@AnthropicAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/d901706612585278/">Anthropic conducted a large-scale qualitative study gathering responses from ove...</a>
-  </h3>
-  <p class="card-summary">Anthropic conducted a large-scale qualitative study gathering responses from over 80,000 people about their hopes, fears, and experiences with AI.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>AnthropicAI</span>
-      <span>&middot;</span>
-      <span>2026-03-18</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">6</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/d901706612585278/">Read more &rarr;</a>
-      <a href="https://x.com/AnthropicAI/status/2034302168879267871" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@AnthropicAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/15861b76398edbf1/">Anthropic plans to use its AI-powered Interviewer tool regularly to gather nuanc...</a>
-  </h3>
-  <p class="card-summary">Anthropic plans to use its AI-powered Interviewer tool regularly to gather nuanced global perspectives on AI's opportunities and risks to inform responsible development.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>AnthropicAI</span>
-      <span>&middot;</span>
-      <span>2026-03-18</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/15861b76398edbf1/">Read more &rarr;</a>
-      <a href="https://x.com/AnthropicAI/status/2034302167612616704" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Research Papers</span>
-    <span class="tag">@AnthropicAI</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/2fbe82bf7d993743/">Anthropic's qualitative study of nearly 81,000 Claude users on how they use AI a...</a>
-  </h3>
-  <p class="card-summary">Anthropic's qualitative study of nearly 81,000 Claude users on how they use AI and what they hope or fear from it is the largest study of its kind.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>AnthropicAI</span>
-      <span>&middot;</span>
-      <span>2026-03-18</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">6</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/2fbe82bf7d993743/">Read more &rarr;</a>
-      <a href="https://x.com/AnthropicAI/status/2034302152945144166" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/708da896f8007470/">Read more &rarr;</a>
+      <a href="https://x.com/perplexity_ai/status/2033947368769663449" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
