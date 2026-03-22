@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="MUP (Modular UI Protocol) proposes pre-built reusable HTML components ">
+<meta property="og:description" content="MUP (Modular UI Protocol) proposes pre-built reusable HTML components with declared functions so LLMs can invoke UI elements by calling functions rather than regenerating fragile code from scratch each time.">
+<meta property="og:url" content="https://cedarpond.ai/posts/fe6f1a783a0411cd/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>MUP (Modular UI Protocol) proposes pre-built reusable HTML c — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/research/">📄 Research Papers</a>
+        
+        <a href="/industry/">📰 Industry News</a>
+        
+        <a href="/weekly/">📋 Weekly</a>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Agent Infrastructure</span>
+      
+      <span class="tag">agents</span>
+      
+      <span class="tag">llm</span>
+      
+      <span class="tag">ui</span>
+      
+      <span class="tag">open_source</span>
+      
+    </div>
+    <h1 class="post-title">MUP (Modular UI Protocol) proposes pre-built reusable HTML components with declared functions so LLMs can invoke UI elem</h1>
+  </div>
+
+  
+  <div class="post-summary">MUP (Modular UI Protocol) proposes pre-built reusable HTML components with declared functions so LLMs can invoke UI elements by calling functions rather than regenerating fragile code from scratch each time.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Show HN: MUP – Stop making LLMs rebuild UI from scratch every time
+We posted MUP here 4 days ago as a protocol spec. Since then we built a basic agentic system on top of it to demonstrate the idea in action.<p>The problem: every time an LLM needs a chart, it generates chart code. Need a canvas? Generate canvas code. Need an editor? Generate editor code. Every conversation starts from zero. Nothing is reusable. The LLM burns tokens on boilerplate, and the result is fragile — one wrong CSS line and it breaks. Worse, the AI can&#x27;t see or react to what the user does with the generated UI.<p>MUP is the opposite approach. A MUP is a pre-built .html file with declared functions. You build a chart MUP once, and every LLM can use it forever — by calling `renderChart(data)`, not by writing 200 lines of Chart.js setup. The LLM doesn&#x27;t generate UIs. It operates them.<p>This changes what the LLM spends its intelligence on. Instead of fighting with CSS and rebuilding the same components over and over, it focuses on behavior — reading user interactions, deciding what to do, orchestrating between panels.<p>How the protocol works:<p>A MUP is a standard HTML file with a JSON manifest in a `&lt;script type=&quot;application&#x2F;mup-manifest&quot;&gt;` tag. The manifest declares the MUP&#x27;s name, description, and functions with JSON Schema inputs. That&#x27;s it — the LLM never sees the HTML or CSS, only these declarations.<p>The host loads the MUP in an iframe, injects a tiny SDK (`mup.*`), and the MUP registers its function handlers. From there, 
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>HACKERNEWS (hackernews)</dd>
+      <dt>Author</dt>
+      <dd>Ricky_Tsou</dd>
+      <dt>Date</dt>
+      <dd>2026-03-20</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>agents, llm, ui, open_source</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="https://news.ycombinator.com/item?id=47454246" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/04ae888f195d3266/">Skillcop is an OSS security scanner wrapping Claude Code that scans AI agent ski...</a>
+  </h3>
+  <p class="card-summary">Skillcop is an OSS security scanner wrapping Claude Code that scans AI agent skills for malicious content before execution, motivated by Snyk's discovery of ~1500 malicious skills on agent skill marketplaces.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>bennydog224</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/04ae888f195d3266/">Read more &rarr;</a>
+      <a href="https://github.com/cfitzgerald-pd/skillcop" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/1b710e309cf31f20/">Hive is a crowdsourced platform where AI agents collaboratively evolve solutions...</a>
+  </h3>
+  <p class="card-summary">Hive is a crowdsourced platform where AI agents collaboratively evolve solutions on benchmarks like ARC-AGI-2 and TAU2-Bench by reading each other's runs, forking ideas, and iterating together. Supports plugging in agents like Claude Code or Codex.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>deviscold</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/1b710e309cf31f20/">Read more &rarr;</a>
+      <a href="https://hive.rllm-project.com/" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/c7389e7b8212355b/">P2PCLAW is a peer-to-peer network enabling AI agents to share and build on each ...</a>
+  </h3>
+  <p class="card-summary">P2PCLAW is a peer-to-peer network enabling AI agents to share and build on each other's scientific results, using formal Lean 4 mathematical proofs (not LLM review) to validate claims.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>FranciscoAngulo</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/c7389e7b8212355b/">Read more &rarr;</a>
+      <a href="https://news.ycombinator.com/item?id=47444212" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<meta property="og:title" content="OpenAI is offering U.S. and Canadian college students $100 in Codex cr">
-<meta property="og:description" content="OpenAI is offering U.S. and Canadian college students $100 in Codex credits to encourage learning through hands-on building and coding.">
-<meta property="og:url" content="https://cedarpond.ai/posts/c7ffe2284b7716c7/">
+<meta property="og:title" content="AUI is a lightweight open spec that makes web apps agent-navigable by ">
+<meta property="og:description" content="AUI is a lightweight open spec that makes web apps agent-navigable by hosting an XML file describing URL-parameter-driven actions, offering a simpler alternative to MCP or A2A for apps that don't need full protocol overhead.">
+<meta property="og:url" content="https://cedarpond.ai/posts/f6e2c71569143937/">
 <meta property="og:site_name" content="CedarPond AI Feed">
 <meta property="og:type" content="article">
 
-  <title>OpenAI is offering U.S. and Canadian college students $100 i — CedarPond AI Feed</title>
+  <title>AUI is a lightweight open spec that makes web apps agent-nav — CedarPond AI Feed</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
   <script src="/script.js"></script>
@@ -54,43 +54,37 @@
 
   <div class="post-header">
     <div class="card-tags">
-      <span class="tag tag-category">Industry News</span>
+      <span class="tag tag-category">Agent Infrastructure</span>
       
-      <span class="tag">llm</span>
+      <span class="tag">agents</span>
       
-      <span class="tag">coding_agents</span>
+      <span class="tag">mcp</span>
       
-      <span class="tag">openai</span>
+      <span class="tag">standards</span>
       
-      <span class="tag">education</span>
+      <span class="tag">open_source</span>
       
     </div>
-    <h1 class="post-title">OpenAI is offering U.S. and Canadian college students $100 in Codex credits to encourage learning through hands-on build</h1>
+    <h1 class="post-title">AUI is a lightweight open spec that makes web apps agent-navigable by hosting an XML file describing URL-parameter-drive</h1>
   </div>
 
   
-  <div class="post-summary">OpenAI is offering U.S. and Canadian college students $100 in Codex credits to encourage learning through hands-on building and coding.</div>
+  <div class="post-summary">AUI is a lightweight open spec that makes web apps agent-navigable by hosting an XML file describing URL-parameter-driven actions, offering a simpler alternative to MCP or A2A for apps that don't need full protocol overhead.</div>
   
 
   <div class="original-content">
     <div class="original-content-label">Original Post</div>
-    Meet Codex for Students.
-
-We're offering college students in the U.S. and Canada $100 in Codex credits.
-
-Our goal is to support students to learn by building, breaking, and fixing things.
-
-
-http://
-chatgpt.com/codex/students
+    Show HN: Agent Use Interface (AUI) – let users bring their own AI agent
+As I started building AI integrations, I came to realize that for many projects, the the best agentic experience is one that simply enables the user&#x27;s personal agent to take actions within your app.<p>The existing options like MCP or A2A are quite involved and for simple apps that are already URL parameter driven, those options seem like overkill.<p>This led me to prototype the Agent Use Interface (AUI) spec.<p>The idea is simple: a lightweight, open spec that makes any app &quot;agent-navigable.&quot; You drop an XML file at &#x2F;agents&#x2F;aui.xml that describes the URL-parameter-driven actions your app supports, like search, create, filter, etc. And that way any AI agent can read aui.xml, understand what&#x27;s possible, and construct URLs on behalf of the user.<p>That&#x27;s it. No SDK. No auth flow. No API keys. Just a catalog of what your app can do, written for LLMs to understand.<p>Is there something like this that already exists? Is the approach too simple to be useful?<p>If your app already supports Universal Links or is otherwise URL parameter driven you could probably add support for AUI in an afternoon.<p>See a working example:
+<a href="https:&#x2F;&#x2F;habittiles.app&#x2F;agents&#x2F;aui.xml" rel="nofollow">https:&#x2F;&#x2F;habittiles.app&#x2F;agents&#x2F;aui.xml</a>
   </div>
 
   <div class="post-metadata">
     <dl>
       <dt>Source</dt>
-      <dd>X (@OpenAI)</dd>
+      <dd>HACKERNEWS (hackernews)</dd>
       <dt>Author</dt>
-      <dd>OpenAI</dd>
+      <dd>FernandoDev</dd>
       <dt>Date</dt>
       <dd>2026-03-20</dd>
       
@@ -106,7 +100,9 @@ chatgpt.com/codex/students
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -116,19 +112,17 @@ chatgpt.com/codex/students
   
   <span class="dot"></span>
   
-  <span class="dot"></span>
-  
-  <span class="score-label">4</span>
+  <span class="score-label">6</span>
 </span>
 </dd>
       
       <dt>Topics</dt>
-      <dd>llm, coding_agents, openai, education</dd>
+      <dd>agents, mcp, standards, open_source</dd>
     </dl>
   </div>
 
   
-  <p><a href="https://x.com/OpenAIDevs/status/2035033703274201109" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  <p><a href="https://github.com/FRE-Studios/Agent-Use-Interface" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
   
 
   
@@ -139,16 +133,69 @@ chatgpt.com/codex/students
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
+    <span class="tag tag-category">Agent Infrastructure</span>
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/9839d4ebd9e7ce5f/">A discussion exploring how giving AI agents terminal access and API keys shifts ...</a>
+    <a href="/posts/04ae888f195d3266/">Skillcop is an OSS security scanner wrapping Claude Code that scans AI agent ski...</a>
   </h3>
-  <p class="card-summary">A discussion exploring how giving AI agents terminal access and API keys shifts security vulnerabilities from deterministic code exploits to natural language prompt injection and social engineering, arguing current defenses are fundamentally inadequate.</p>
+  <p class="card-summary">Skillcop is an OSS security scanner wrapping Claude Code that scans AI agent skills for malicious content before execution, motivated by Snyk's discovery of ~1500 malicious skills on agent skill marketplaces.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>lielcohen</span>
+      <span>bennydog224</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/posts/04ae888f195d3266/">Read more &rarr;</a>
+      <a href="https://github.com/cfitzgerald-pd/skillcop" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/posts/1b710e309cf31f20/">Hive is a crowdsourced platform where AI agents collaboratively evolve solutions...</a>
+  </h3>
+  <p class="card-summary">Hive is a crowdsourced platform where AI agents collaboratively evolve solutions on benchmarks like ARC-AGI-2 and TAU2-Bench by reading each other's runs, forking ideas, and iterating together. Supports plugging in agents like Claude Code or Codex.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>deviscold</span>
       <span>&middot;</span>
       <span>2026-03-19</span>
       
@@ -182,8 +229,8 @@ chatgpt.com/codex/students
       
     </div>
     <div class="card-links">
-      <a href="/posts/9839d4ebd9e7ce5f/">Read more &rarr;</a>
-      <a href="https://news.ycombinator.com/item?id=47446099" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/1b710e309cf31f20/">Read more &rarr;</a>
+      <a href="https://hive.rllm-project.com/" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -192,69 +239,16 @@ chatgpt.com/codex/students
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
+    <span class="tag tag-category">Agent Infrastructure</span>
     <span class="tag">hackernews</span>
   </div>
   <h3 class="card-title">
-    <a href="/posts/e4e469f31c04b201/">Sitefire (YC W26) is a data-driven platform helping brands optimize visibility i...</a>
+    <a href="/posts/c7389e7b8212355b/">P2PCLAW is a peer-to-peer network enabling AI agents to share and build on each ...</a>
   </h3>
-  <p class="card-summary">Sitefire (YC W26) is a data-driven platform helping brands optimize visibility in AI search results (GEO), addressing the growing problem of traffic loss from Google's AI Overviews and other LLM-powered search surfaces.</p>
+  <p class="card-summary">P2PCLAW is a peer-to-peer network enabling AI agents to share and build on each other's scientific results, using formal Lean 4 mathematical proofs (not LLM review) to validate claims.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>vincko</span>
-      <span>&middot;</span>
-      <span>2026-03-20</span>
-      
-      <span>&middot;</span>
-      
-<span class="score-bar">
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot filled"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">5</span>
-</span>
-
-      
-    </div>
-    <div class="card-links">
-      <a href="/posts/e4e469f31c04b201/">Read more &rarr;</a>
-      <a href="https://news.ycombinator.com/item?id=47457472" target="_blank" rel="noopener">Original &nearr;</a>
-    </div>
-  </div>
-</div>
-
-      
-      
-<div class="card">
-  <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">hackernews</span>
-  </div>
-  <h3 class="card-title">
-    <a href="/posts/2572ff9fdd6fdf20/">A solo developer open-sourced three large systems (~1.5M lines of code) includin...</a>
-  </h3>
-  <p class="card-summary">A solo developer open-sourced three large systems (~1.5M lines of code) including ASE, a closed-loop autonomous software engineering platform for code creation, monitoring, and self-improvement, deployable via Docker/Helm/Kubernetes.</p>
-  <div class="card-meta">
-    <div class="card-meta-left">
-      <span>BrainDAnderson</span>
+      <span>FranciscoAngulo</span>
       <span>&middot;</span>
       <span>2026-03-19</span>
       
@@ -270,7 +264,11 @@ chatgpt.com/codex/students
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -278,18 +276,14 @@ chatgpt.com/codex/students
   
   <span class="dot"></span>
   
-  <span class="dot"></span>
-  
-  <span class="dot"></span>
-  
-  <span class="score-label">4</span>
+  <span class="score-label">7</span>
 </span>
 
       
     </div>
     <div class="card-links">
-      <a href="/posts/2572ff9fdd6fdf20/">Read more &rarr;</a>
-      <a href="https://news.ycombinator.com/item?id=47447970" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/posts/c7389e7b8212355b/">Read more &rarr;</a>
+      <a href="https://news.ycombinator.com/item?id=47444212" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
