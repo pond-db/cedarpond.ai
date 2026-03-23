@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="MAPG proposes a multi-agent probabilistic grounding system enabling ro">
+<meta property="og:description" content="MAPG proposes a multi-agent probabilistic grounding system enabling robots to execute metric-semantic navigation commands like 'two meters to the right of the fridge' in 3D scenes. The approach addresses the gap in VLMs' ability to reason about precise metric constraints alongside semantic references.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/5ce4363b67ee5a1d/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>MAPG proposes a multi-agent probabilistic grounding system e — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">agents</span>
+      
+      <span class="tag">robotics</span>
+      
+      <span class="tag">vision_language</span>
+      
+      <span class="tag">spatial_reasoning</span>
+      
+    </div>
+    <h1 class="post-title">MAPG proposes a multi-agent probabilistic grounding system enabling robots to execute metric-semantic navigation command</h1>
+  </div>
+
+  
+  <div class="post-summary">MAPG proposes a multi-agent probabilistic grounding system enabling robots to execute metric-semantic navigation commands like 'two meters to the right of the fridge' in 3D scenes. The approach addresses the gap in VLMs' ability to reason about precise metric constraints alongside semantic references.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Meanings and Measurements: Multi-Agent Probabilistic Grounding for Vision-Language Navigation
+
+Robots collaborating with humans must convert natural language goals into actionable, physically grounded decisions. For example, executing a command such as "go two meters to the right of the fridge" requires grounding semantic references, spatial relations, and metric constraints within a 3D scene. While recent vision language models (VLMs) demonstrate strong semantic grounding capabilities, they are not explicitly designed to reason about metric constraints in physically defined spaces. In this work, we empirically demonstrate that state-of-the-art VLM-based grounding approaches struggle with complex metric-semantic language queries. To address this limitation, we propose MAPG (Multi-Agent Probabilistic Grounding), an agentic framework that decomposes language queries into structured subcomponents and queries a VLM to ground each component. MAPG then probabilistically composes these grounded outputs to produce metrically consistent, actionable decisions in 3D space. We evaluate MAPG on the HM-EQA benchmark and show consistent performance improvements over strong baselines. Furthermore, we introduce a new benchmark, MAPG-Bench, specifically designed to evaluate metric-semantic goal grounding, addressing a gap in existing language grounding evaluations. We also present a real-world robot demonstration showing that MAPG transfers beyond simulation when a structured scene representation is available.
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Swagat Padhan, Lakshya Jain, Bhavya Minesh Shah +3 more</dd>
+      <dt>Date</dt>
+      <dd>2026-03-19</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>agents, robotics, vision_language, spatial_reasoning</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2603.19166v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@GoogleDeepMind</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/c2ed2f0fa1e687d9/">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and...</a>
+  </h3>
+  <p class="card-summary">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and AlphaGeometry achieved silver-medal performance on International Math Olympiad problems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>GoogleDeepMind</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/c2ed2f0fa1e687d9/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleDeepMind/status/2034995752963809700" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/c7389e7b8212355b/">P2PCLAW is a peer-to-peer network where AI agents and researchers publish and va...</a>
+  </h3>
+  <p class="card-summary">P2PCLAW is a peer-to-peer network where AI agents and researchers publish and validate scientific results using formal Lean 4 mathematical proofs, enabling agents to build on each other's verified work.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>FranciscoAngulo</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/c7389e7b8212355b/">Read more &rarr;</a>
+      <a href="https://news.ycombinator.com/item?id=47444212" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">openai_blog</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/e0155a2411913b69/">OpenAI details how chain-of-thought monitoring is used to detect misalignment in...</a>
+  </h3>
+  <p class="card-summary">OpenAI details how chain-of-thought monitoring is used to detect misalignment in internal coding agents, analyzing real deployments to strengthen AI safety.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>OpenAI Blog</span>
+      <span>&middot;</span>
+      <span>2026-03-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/e0155a2411913b69/">Read more &rarr;</a>
+      <a href="https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
