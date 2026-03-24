@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="This paper provides the first theoretical proof that confidence-based ">
+<meta property="og:description" content="This paper provides the first theoretical proof that confidence-based decoding for diffusion language models is provably efficient, validating empirically successful adaptive unmasking strategies. It bridges the gap between practical performance and theoretical understanding of DLMs.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/9035d1eb8c2e5e55/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>This paper provides the first theoretical proof that confide — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">diffusion_language_models</span>
+      
+      <span class="tag">decoding</span>
+      
+      <span class="tag">theory</span>
+      
+      <span class="tag">llm</span>
+      
+    </div>
+    <h1 class="post-title">This paper provides the first theoretical proof that confidence-based decoding for diffusion language models is provably</h1>
+  </div>
+
+  
+  <div class="post-summary">This paper provides the first theoretical proof that confidence-based decoding for diffusion language models is provably efficient, validating empirically successful adaptive unmasking strategies. It bridges the gap between practical performance and theoretical understanding of DLMs.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Confidence-Based Decoding is Provably Efficient for Diffusion Language Models
+
+Diffusion language models (DLMs) have emerged as a promising alternative to autoregressive (AR) models for language modeling, allowing flexible generation order and parallel generation of multiple tokens. However, this flexibility introduces a challenge absent in AR models: the \emph{decoding strategy} -- which determines the order and number of tokens generated at each iteration -- critically affects sampling efficiency. Among decoding strategies explored in practice, confidence-based methods, which adaptively select which and how many tokens to unmask based on prediction confidence, have shown strong empirical performance. Despite this success, our theoretical understanding of confidence-based decoding remains limited.
+  In this work, we develop the first theoretical analysis framework for confidence-based decoding in DLMs. We focus on an entropy sum-based strategy that continues unmasking tokens within each iteration until the cumulative entropy exceeds a threshold, and show that it achieves $\varepsilon$-accurate sampling in KL divergence with an expected number of iterations $\widetilde O(H(X_0)/\varepsilon)$, where $H(X_0)$ denotes the entropy of the target data distribution. Notably, this strategy yields substantial sampling acceleration when the data distribution has low entropy relative to the sequence length, while automatically adapting to the intrinsic complexity of data without requiring prior knowledge or hyperparameter tuning. Overall, our results provide a the
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Changxiao Cai, Gen Li</dd>
+      <dt>Date</dt>
+      <dd>2026-03-23</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>diffusion_language_models, decoding, theory, llm</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2603.22248v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@GoogleDeepMind</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/c2ed2f0fa1e687d9/">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and...</a>
+  </h3>
+  <p class="card-summary">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and AlphaGeometry achieved silver-medal performance on International Math Olympiad problems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>GoogleDeepMind</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/c2ed2f0fa1e687d9/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleDeepMind/status/2034995752963809700" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/db755c05ae089d26/">Claude Code autonomously executes full high-energy physics analysis pipelines—fr...</a>
+  </h3>
+  <p class="card-summary">Claude Code autonomously executes full high-energy physics analysis pipelines—from event selection to paper drafting—with minimal expert input, arguing the field underestimates current agentic AI capabilities.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Eric A. Moreno, Samuel Bright-Thonney, Andrzej Novak +2 more</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/db755c05ae089d26/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2603.20179v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/31e37438927246c0/">Anthropic shares research on single-agent sequential task execution, arguing tha...</a>
+  </h3>
+  <p class="card-summary">Anthropic shares research on single-agent sequential task execution, arguing that multi-agent splits aren't always optimal for tasks where errors compound, illustrated with early-universe modeling.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>AnthropicAI</span>
+      <span>&middot;</span>
+      <span>2026-03-23</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/31e37438927246c0/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2036179045143158925" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
