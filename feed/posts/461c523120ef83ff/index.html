@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="Formal analysis proving that the completion technique makes Unbounded ">
+<meta property="og:description" content="Formal analysis proving that the completion technique makes Unbounded Best-First Minimax and Descent Minimax algorithms complete for two-player perfect information games, resolving an open question in knowledge-free RL.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/461c523120ef83ff/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>Formal analysis proving that the completion technique makes  — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">reinforcement_learning</span>
+      
+      <span class="tag">game_theory</span>
+      
+      <span class="tag">search_algorithms</span>
+      
+      <span class="tag">theory</span>
+      
+    </div>
+    <h1 class="post-title">Formal analysis proving that the completion technique makes Unbounded Best-First Minimax and Descent Minimax algorithms </h1>
+  </div>
+
+  
+  <div class="post-summary">Formal analysis proving that the completion technique makes Unbounded Best-First Minimax and Descent Minimax algorithms complete for two-player perfect information games, resolving an open question in knowledge-free RL.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Completeness of Unbounded Best-First Minimax and Descent Minimax
+
+In this article, we focus on search algorithms for two-player perfect information games, whose objective is to determine the best possible strategy, and ideally a winning strategy.
+  Unfortunately, some search algorithms for games in the literature are not able to always determine a winning strategy, even with an infinite search time. This is the case, for example, of the following algorithms: Unbounded Best-First Minimax and Descent Minimax, which are core algorithms in state-of-the-art knowledge-free reinforcement learning.
+  They were then improved with the so-called completion technique. However, whether this technique sufficiently improves these algorithms to allow them to always determine a winning strategy remained an open question until now.
+  To answer this question, we generalize the two algorithms (their versions using the completion technique), and we show that any algorithm of this class of algorithms computes the best strategy.
+  Finally, we experimentally show that the completion technique improves winning performance.
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Quentin Cohen-Solal</dd>
+      <dt>Date</dt>
+      <dd>2026-03-25</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">4</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>reinforcement_learning, game_theory, search_algorithms, theory</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2603.24572v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@fchollet</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/f93599bae8a8aaa7/">ARC-AGI-3 has launched as a new benchmark for evaluating agentic intelligence th...</a>
+  </h3>
+  <p class="card-summary">ARC-AGI-3 has launched as a new benchmark for evaluating agentic intelligence through interactive reasoning environments, targeting human-level action efficiency as the success threshold.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>fchollet</span>
+      <span>&middot;</span>
+      <span>2026-03-25</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/f93599bae8a8aaa7/">Read more &rarr;</a>
+      <a href="https://x.com/fchollet/status/2036861192619384989" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@GoogleDeepMind</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/c2ed2f0fa1e687d9/">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and...</a>
+  </h3>
+  <p class="card-summary">DeepMind's AlphaProof paper is published in Nature, detailing how AlphaProof and AlphaGeometry achieved silver-medal performance on International Math Olympiad problems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>GoogleDeepMind</span>
+      <span>&middot;</span>
+      <span>2026-03-20</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/c2ed2f0fa1e687d9/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleDeepMind/status/2034995752963809700" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/414e947ef8ee5118/">An autoresearch pipeline powered by Claude Code autonomously discovers novel adv...</a>
+  </h3>
+  <p class="card-summary">An autoresearch pipeline powered by Claude Code autonomously discovers novel adversarial attack algorithms that significantly outperform 30+ existing methods, achieving up to 40% jailbreak success rate on safety-critical queries.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Alexander Panfilov, Peter Romov, Igor Shilov +3 more</span>
+      <span>&middot;</span>
+      <span>2026-03-25</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/414e947ef8ee5118/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2603.24511v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
