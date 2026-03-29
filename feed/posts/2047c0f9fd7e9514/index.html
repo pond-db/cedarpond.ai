@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<meta property="og:title" content="LlamaIndex released a LlamaParse agents skill installable in one line ">
-<meta property="og:description" content="LlamaIndex released a LlamaParse agents skill installable in one line via Vercel's skills utility, giving agents the ability to parse complex PDFs with dense tables, charts, and handwriting.">
-<meta property="og:url" content="https://cedarpond.ai/feed/posts/f53f6b908c9ba9ad/">
+<meta property="og:title" content="Pneuma is an AI-native OS where apps don't exist until needed — users ">
+<meta property="og:description" content="Pneuma is an AI-native OS where apps don't exist until needed — users describe what they want, an LLM generates a self-contained Rust module on demand, and agents persist and communicate via IPC.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/2047c0f9fd7e9514/">
 <meta property="og:site_name" content="CedarPond AI Feed">
 <meta property="og:type" content="article">
 
-  <title>LlamaIndex released a LlamaParse agents skill installable in — CedarPond AI Feed</title>
+  <title>Pneuma is an AI-native OS where apps don't exist until neede — CedarPond AI Feed</title>
   <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
   <link rel="stylesheet" href="/feed/style.css">
   <script src="/feed/script.js"></script>
@@ -59,35 +59,35 @@
       
       <span class="tag">agents</span>
       
-      <span class="tag">document_parsing</span>
-      
       <span class="tag">llm</span>
       
-      <span class="tag">tools</span>
+      <span class="tag">open_source</span>
+      
+      <span class="tag">infrastructure</span>
       
     </div>
-    <h1 class="post-title">LlamaIndex released a LlamaParse agents skill installable in one line via Vercel's skills utility, giving agents the abi</h1>
+    <h1 class="post-title">Pneuma is an AI-native OS where apps don't exist until needed — users describe what they want, an LLM generates a self-c</h1>
   </div>
 
   
-  <div class="post-summary">LlamaIndex released a LlamaParse agents skill installable in one line via Vercel's skills utility, giving agents the ability to parse complex PDFs with dense tables, charts, and handwriting.</div>
+  <div class="post-summary">Pneuma is an AI-native OS where apps don't exist until needed — users describe what they want, an LLM generates a self-contained Rust module on demand, and agents persist and communicate via IPC.</div>
   
 
   <div class="original-content">
     <div class="original-content-label">Original Post</div>
-    We’ve created an agents skill that gives all of your agents the power to understand the most complex PDFs - with dense tables, unlabeled charts, messy handwriting and more.
-
-Our LlamaParse agents skill can be installed in one-line thanks to @vercel’s skills utility. LlamaParse https://t.co/CoqHBB9Y0g
+    Show HN: I built an OS that is pure AI
+I&#x27;ve been building Pneuma, a desktop computing environment where software doesn&#x27;t need to exist before you need it. There are no pre-installed applications. You boot to a blank screen with a prompt. You describe what you want: a CPU monitor, a game, a notes app, a data visualizer and a working program materializes in seconds.
+Once generated, agents persist. You can reuse them, they can communicate with each other through IPC, and you can share them through a community agent store. The idea isn&#x27;t that everything is disposable. It&#x27;s that creation is instant and the barrier to having exactly the tool you need is just describing it.<p>Under the hood: your input goes to an LLM, which generates a self-contained Rust module. That gets compiled to WebAssembly in under a second, then JIT-compiled and executed in a sandboxed Wasmtime instance. Everything is GPU-rendered via wgpu (Vulkan&#x2F;Metal&#x2F;DX12). If compilation fails, the error is automatically fed back for correction. ~90% first-attempt success rate.<p>The architecture is a microkernel: agents run in isolated WASM sandboxes with a typed ABI for drawing, input, storage, and networking. An agent crash can&#x27;t bring down the system. Agents can run side by side, persist to a local store, and be shared or downloaded from the community store.<p>Currently it runs as a desktop app on Linux, macOS, and Windows. The longer-term goal is to run on bare metal and support existing ARM64 binaries alongside generat
   </div>
 
   <div class="post-metadata">
     <dl>
       <dt>Source</dt>
-      <dd>X (@llama_index)</dd>
+      <dd>HACKERNEWS (hackernews)</dd>
       <dt>Author</dt>
-      <dd>llama_index</dd>
+      <dd>evanbarke</dd>
       <dt>Date</dt>
-      <dd>2026-03-22</dd>
+      <dd>2026-03-28</dd>
       
       <dt>Relevance</dt>
       <dd>
@@ -105,7 +105,7 @@ Our LlamaParse agents skill can be installed in one-line thanks to @vercel’s s
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -113,17 +113,17 @@ Our LlamaParse agents skill can be installed in one-line thanks to @vercel’s s
   
   <span class="dot"></span>
   
-  <span class="score-label">6</span>
+  <span class="score-label">7</span>
 </span>
 </dd>
       
       <dt>Topics</dt>
-      <dd>agents, document_parsing, llm, tools</dd>
+      <dd>agents, llm, open_source, infrastructure</dd>
     </dl>
   </div>
 
   
-  <p><a href="https://x.com/llama_index/status/2035764914300854753" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  <p><a href="https://pneuma.computer" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
   
 
   

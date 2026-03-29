@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<meta property="og:title" content="Bossa provides AI agents with persistent cross-session filesystem memo">
-<meta property="og:description" content="Bossa provides AI agents with persistent cross-session filesystem memory via MCP or CLI using simple file operations (ls, grep, read, write), avoiding embeddings or retrieval pipelines entirely.">
-<meta property="og:url" content="https://cedarpond.ai/feed/posts/4252f0d8f8d4b504/">
+<meta property="og:title" content="Cohere Transcribe claims state-of-the-art ASR accuracy in real-world n">
+<meta property="og:description" content="Cohere Transcribe claims state-of-the-art ASR accuracy in real-world noisy conditions, positioning itself as a new benchmark for automatic speech recognition.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/20f1ac17a52562dc/">
 <meta property="og:site_name" content="CedarPond AI Feed">
 <meta property="og:type" content="article">
 
-  <title>Bossa provides AI agents with persistent cross-session files — CedarPond AI Feed</title>
+  <title>Cohere Transcribe claims state-of-the-art ASR accuracy in re — CedarPond AI Feed</title>
   <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
   <link rel="stylesheet" href="/feed/style.css">
   <script src="/feed/script.js"></script>
@@ -55,43 +55,37 @@
 
   <div class="post-header">
     <div class="card-tags">
-      <span class="tag tag-category">Agent Infrastructure</span>
+      <span class="tag tag-category">Model Releases</span>
       
-      <span class="tag">mcp</span>
+      <span class="tag">speech_recognition</span>
       
-      <span class="tag">memory</span>
-      
-      <span class="tag">agents</span>
+      <span class="tag">model_release</span>
       
       <span class="tag">open_source</span>
       
     </div>
-    <h1 class="post-title">Bossa provides AI agents with persistent cross-session filesystem memory via MCP or CLI using simple file operations (ls</h1>
+    <h1 class="post-title">Cohere Transcribe claims state-of-the-art ASR accuracy in real-world noisy conditions, positioning itself as a new bench</h1>
   </div>
 
   
-  <div class="post-summary">Bossa provides AI agents with persistent cross-session filesystem memory via MCP or CLI using simple file operations (ls, grep, read, write), avoiding embeddings or retrieval pipelines entirely.</div>
+  <div class="post-summary">Cohere Transcribe claims state-of-the-art ASR accuracy in real-world noisy conditions, positioning itself as a new benchmark for automatic speech recognition.</div>
   
 
   <div class="original-content">
     <div class="original-content-label">Original Post</div>
-    Show HN: Bossa – Persistent filesystem memory for AI agents via MCP or CLI
-Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time I switched machines — architecture decisions, naming conventions, personal preferences. Tedious enough that I built something to fix it.<p>The idea is simple: give your agent ls, grep, read, and write over a persistent filesystem. Whatever it stores in one session is there in the next. No embeddings, no retrieval pipeline — agents already know how to navigate a filesystem, so there&#x27;s nothing new to learn.<p>This also solves another problem. LLMs reason worse when context is bloated. A filesystem enables progressive disclosure naturally: the agent starts lean, runs ls to find what&#x27;s available, greps for specifics, reads only what it needs. By the time it&#x27;s reasoning about your actual problem, the context window is full of signal.<p>I tried RAG first. It doesn&#x27;t map well to exact preferences — &quot;use camelCase&quot; shouldn&#x27;t compete with semantically similar documents for retrieval rank.<p>Under the hood: Postgres with trigram full-text search. Each file is a row, directories are implicit from paths. Grep across 10K files in ~50ms.<p>To try it (sign up takes 30 seconds):
-  pip install bossa-memory
-  bossa signup
-  bossa login
-  bossa files write &#x2F;memory&#x2F;test.md &quot;Hello&quot;
-  bossa files read &#x2F;memory&#x2F;test.md<p>Add the MCP server URL or CLI tool to Claude, Cursor, or LangChain and your agent gets ls&#x2F;read&#x2F;write&#x2F;grep&#x2F;glob.<p>Free
+    Cohere Transcribe is setting a new standard for automatic speech recognition model accuracy in real world conditions – even with a noisy blender running. Try it out for yourself 👇
+
+https://t.co/cIHYqTVVyI
   </div>
 
   <div class="post-metadata">
     <dl>
       <dt>Source</dt>
-      <dd>HACKERNEWS (hackernews)</dd>
+      <dd>X (@Cohere)</dd>
       <dt>Author</dt>
-      <dd>vinny380</dd>
+      <dd>Cohere</dd>
       <dt>Date</dt>
-      <dd>2026-03-22</dd>
+      <dd>2026-03-28</dd>
       
       <dt>Relevance</dt>
       <dd>
@@ -109,7 +103,7 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -117,17 +111,17 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
   
   <span class="dot"></span>
   
-  <span class="score-label">6</span>
+  <span class="score-label">7</span>
 </span>
 </dd>
       
       <dt>Topics</dt>
-      <dd>mcp, memory, agents, open_source</dd>
+      <dd>speech_recognition, model_release, open_source</dd>
     </dl>
   </div>
 
   
-  <p><a href="https://news.ycombinator.com/item?id=47478872" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  <p><a href="https://x.com/Cohere/status/2037929485459235316" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
   
 
   
@@ -138,16 +132,16 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">@OpenAI</span>
+    <span class="tag tag-category">Model Releases</span>
+    <span class="tag">@MistralAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/13b7659526a0cda2/">OpenAI is rolling out plugins for Codex, enabling seamless integration with popu...</a>
+    <a href="/feed/posts/9b8969a3dfa0a733/">Mistral AI introduces Voxtral TTS, an open-weight frontier text-to-speech model ...</a>
   </h3>
-  <p class="card-summary">OpenAI is rolling out plugins for Codex, enabling seamless integration with popular tools like Slack, Figma, Notion, and Gmail out of the box.</p>
+  <p class="card-summary">Mistral AI introduces Voxtral TTS, an open-weight frontier text-to-speech model featuring emotionally expressive speech, 9-language support, and ultra-low latency for time-to-first-audio.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>OpenAI</span>
+      <span>MistralAI</span>
       <span>&middot;</span>
       <span>2026-03-26</span>
       
@@ -169,20 +163,20 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
   <span class="dot"></span>
   
-  <span class="score-label">7</span>
+  <span class="score-label">8</span>
 </span>
 
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/13b7659526a0cda2/">Read more &rarr;</a>
-      <a href="https://x.com/OpenAI/status/2037296316104282119" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/9b8969a3dfa0a733/">Read more &rarr;</a>
+      <a href="https://x.com/MistralAI/status/2037183026539483288" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -191,18 +185,18 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">arxiv</span>
+    <span class="tag tag-category">Model Releases</span>
+    <span class="tag">@Cohere</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/923bc8832a0fe331/">Proposes Natural-Language Agent Harnesses (NLAHs), externalizing agent control l...</a>
+    <a href="/feed/posts/56ea693d5c4fba20/">Cohere released an open-source SOTA speech transcription model that runs in the ...</a>
   </h3>
-  <p class="card-summary">Proposes Natural-Language Agent Harnesses (NLAHs), externalizing agent control logic as portable, editable natural-language artifacts executed by a shared runtime, improving transferability and scientific comparability.</p>
+  <p class="card-summary">Cohere released an open-source SOTA speech transcription model that runs in the browser, with weights available on Hugging Face.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>Linyue Pan, Lexiao Zou, Shuo Guo +2 more</span>
+      <span>Cohere</span>
       <span>&middot;</span>
-      <span>2026-03-26</span>
+      <span>2026-03-28</span>
       
       <span>&middot;</span>
       
@@ -234,8 +228,8 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/923bc8832a0fe331/">Read more &rarr;</a>
-      <a href="http://arxiv.org/abs/2603.25723v1" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/56ea693d5c4fba20/">Read more &rarr;</a>
+      <a href="https://x.com/Cohere/status/2037914966305493286" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -244,18 +238,18 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Agent Infrastructure</span>
-    <span class="tag">arxiv</span>
+    <span class="tag tag-category">Model Releases</span>
+    <span class="tag">@GoogleAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/9f9c96c78e6d1803/">Presents the 'Kitchen Loop,' a framework for autonomous self-evolving codebases ...</a>
+    <a href="/feed/posts/2e2e39b536af79d0/">Google released Gemini 3.1 Flash Live with improved audio quality, reasoning, an...</a>
   </h3>
-  <p class="card-summary">Presents the 'Kitchen Loop,' a framework for autonomous self-evolving codebases using LLM agents as synthetic power users, validated over 285+ iterations with 1,094+ merged PRs and zero regressions.</p>
+  <p class="card-summary">Google released Gemini 3.1 Flash Live with improved audio quality, reasoning, and lower latency for voice interactions, alongside a desktop Gemini app update.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>Yannick Roy</span>
+      <span>GoogleAI</span>
       <span>&middot;</span>
-      <span>2026-03-26</span>
+      <span>2026-03-27</span>
       
       <span>&middot;</span>
       
@@ -287,8 +281,8 @@ Hi HN,<p>I kept pasting the same context into Cursor and Claude Code every time 
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/9f9c96c78e6d1803/">Read more &rarr;</a>
-      <a href="http://arxiv.org/abs/2603.25697v1" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/2e2e39b536af79d0/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleAI/status/2037610464620810602" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
