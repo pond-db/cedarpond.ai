@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="This work shows that log-likelihood scoring in distillation benchmarks">
+<meta property="og:description" content="This work shows that log-likelihood scoring in distillation benchmarks can mask significant generation quality gaps, and proposes generation-focused distillation for converting Transformers into efficient hybrid models.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/2853100db62b8e3e/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>This work shows that log-likelihood scoring in distillation  — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">llm</span>
+      
+      <span class="tag">distillation</span>
+      
+      <span class="tag">evaluation</span>
+      
+      <span class="tag">inference_efficiency</span>
+      
+    </div>
+    <h1 class="post-title">This work shows that log-likelihood scoring in distillation benchmarks can mask significant generation quality gaps, and</h1>
+  </div>
+
+  
+  <div class="post-summary">This work shows that log-likelihood scoring in distillation benchmarks can mask significant generation quality gaps, and proposes generation-focused distillation for converting Transformers into efficient hybrid models.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    When Perplexity Lies: Generation-Focused Distillation of Hybrid Sequence Models
+
+Converting a pretrained Transformer into a more efficient hybrid model through distillation offers a promising approach to reducing inference costs. However, achieving high-quality generation in distilled models requires careful joint design of both the student architecture and the distillation process. Many prior distillation works evaluate downstream multiple-choice benchmarks by ranking candidate answers with log-likelihood rather than requiring autoregressive generation, which can obscure important differences in model quality. For example, we show that a 7B parameter distilled model that nearly matches its teacher to within 0.2\,pp under log-likelihood scoring actually falls behind by 20.8\,pp when the model must generate answers autoregressively.
+  We propose a Hybrid Kimi Delta Attention (Hybrid-KDA) architecture paired with GenDistill, a multi-stage distillation pipeline, and use generation-based evaluation throughout to guide design decisions. Applying this approach to Qwen3-0.6B, we systematically ablate six design axes: training objective, loss masking, training duration, dataset selection, parameter freezing, and architecture choice. We find that log-likelihood-based evaluation consistently underestimates the gap between teacher and student, and can in some cases reverse the ranking of design choices, meaning that conclusions drawn from perplexity-only evaluation may be misleading. Among the factors we study, dataset selection, completion-only masking, and freezin
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Juan Gabriel Kostelec, Xiang Wang, Axel Laborieux +2 more</dd>
+      <dt>Date</dt>
+      <dd>2026-03-27</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>llm, distillation, evaluation, inference_efficiency</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2603.26556v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@fchollet</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/f93599bae8a8aaa7/">ARC-AGI-3 has launched as a new benchmark for evaluating agentic intelligence th...</a>
+  </h3>
+  <p class="card-summary">ARC-AGI-3 has launched as a new benchmark for evaluating agentic intelligence through interactive reasoning environments, targeting human-level action efficiency as the success threshold.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>fchollet</span>
+      <span>&middot;</span>
+      <span>2026-03-25</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/f93599bae8a8aaa7/">Read more &rarr;</a>
+      <a href="https://x.com/fchollet/status/2036861192619384989" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@hardmaru</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/9116ad441fab1998/">The AI Scientist, a fully automated AI research agent built on foundation models...</a>
+  </h3>
+  <p class="card-summary">The AI Scientist, a fully automated AI research agent built on foundation models, has been published in Nature, marking a major validation of end-to-end autonomous research execution.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>hardmaru</span>
+      <span>&middot;</span>
+      <span>2026-03-25</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/9116ad441fab1998/">Read more &rarr;</a>
+      <a href="https://x.com/hardmaru/status/2036840833690071450" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/414e947ef8ee5118/">An autoresearch pipeline powered by Claude Code autonomously discovers novel adv...</a>
+  </h3>
+  <p class="card-summary">An autoresearch pipeline powered by Claude Code autonomously discovers novel adversarial attack algorithms that significantly outperform 30+ existing methods, achieving up to 40% jailbreak success rate on safety-critical queries.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Alexander Panfilov, Peter Romov, Igor Shilov +3 more</span>
+      <span>&middot;</span>
+      <span>2026-03-25</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/414e947ef8ee5118/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2603.24511v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
