@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="ScoringBench introduces a benchmark for tabular foundation models (e.g">
+<meta property="og:description" content="ScoringBench introduces a benchmark for tabular foundation models (e.g., TabPFN, TabICL) using proper scoring rules like CRPS and Brier Score, revealing that standard RMSE/R² metrics obscure distributional tail performance critical for finance and clinical applications.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/91aec577f59faf63/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>ScoringBench introduces a benchmark for tabular foundation m — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">tabular_ml</span>
+      
+      <span class="tag">benchmarks</span>
+      
+      <span class="tag">foundation_models</span>
+      
+      <span class="tag">probabilistic_forecasting</span>
+      
+    </div>
+    <h1 class="post-title">ScoringBench introduces a benchmark for tabular foundation models (e.g., TabPFN, TabICL) using proper scoring rules like</h1>
+  </div>
+
+  
+  <div class="post-summary">ScoringBench introduces a benchmark for tabular foundation models (e.g., TabPFN, TabICL) using proper scoring rules like CRPS and Brier Score, revealing that standard RMSE/R² metrics obscure distributional tail performance critical for finance and clinical applications.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    ScoringBench: A Benchmark for Evaluating Tabular Foundation Models with Proper Scoring Rules
+
+Tabular foundation models such as TabPFN and TabICL already produce full predictive distributions yet prevailing regression benchmarks evaluate them almost exclusively via point estimate metrics RMSE R2 These aggregate measures often obscure model performance in the tails of the distribution a critical deficit for high stakes decision making in domains like finance and clinical research where asymmetric risk profiles are the norm We introduce ScoringBench an open benchmark that computes a comprehensive suite of proper scoring rules like CRPS CRLS Interval Score Energy Score weighted CRPS and Brier Score alongside standard point metrics providing a richer picture of probabilistic forecast quality We evaluate realTabPFNv2.5 fine tuned with different scoring rule objectives and TabICL relative to untuned realTabPFNv2.5 across a suite of regression benchmarks Our results confirm that model rankings depend on the chosen scoring rule and that no single pretraining objective is universally optimal This demonstrates that for applications sensitive to extreme events the choice of evaluation metric is as much a domain specific requirement as the data itself ScoringBench is available at https://github.com/jonaslandsgesell/ScoringBench A live preview of the current leaderboard is available at https://scoringbench.bolt.host The leaderboard is maintained via git pull requests to ensure transparency traceability agility and reproducibility
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Jonas Landsgesell, Pascal Knoll</dd>
+      <dt>Date</dt>
+      <dd>2026-03-31</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">5</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>tabular_ml, benchmarks, foundation_models, probabilistic_forecasting</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2603.29928v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/11b934cd0effe19b/">Researchers at TU Delft demonstrate live AI agent trust vulnerabilities—fake age...</a>
+  </h3>
+  <p class="card-summary">Researchers at TU Delft demonstrate live AI agent trust vulnerabilities—fake agent identities, MCP tool bait-and-switch attacks, and Sybil review fraud—on real payment rails from Stripe, Coinbase, and Visa, highlighting the absence of agent reputation systems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>viftode4</span>
+      <span>&middot;</span>
+      <span>2026-04-01</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/11b934cd0effe19b/">Read more &rarr;</a>
+      <a href="http://5.161.255.238:8888" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/9cd7a0e93aee0e68/">A conceptual RL-based framework predicts when Chain-of-Thought monitoring is saf...</a>
+  </h3>
+  <p class="card-summary">A conceptual RL-based framework predicts when Chain-of-Thought monitoring is safe to optimize, classifying reward terms as aligned, orthogonal, or in-conflict to assess monitorability risks.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Max Kaufmann, David Lindner, Roland S. Zimmermann +1 more</span>
+      <span>&middot;</span>
+      <span>2026-03-31</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/9cd7a0e93aee0e68/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2603.30036v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@perplexity_ai</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/ac6336bcb2b0d57b/">Perplexity's Secure Intelligence Institute published the first paper responding ...</a>
+  </h3>
+  <p class="card-summary">Perplexity's Secure Intelligence Institute published the first paper responding to NIST's RFI on securing autonomous AI agents, addressing emerging safety standards.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>perplexity_ai</span>
+      <span>&middot;</span>
+      <span>2026-03-31</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/ac6336bcb2b0d57b/">Read more &rarr;</a>
+      <a href="https://x.com/perplexity_ai/status/2039029152880480260" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
