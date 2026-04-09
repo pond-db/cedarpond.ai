@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Ball | Cedar Pond AI</title>
+    <meta name="description" content="Play Space Ball, a fast gravity-flip browser game from Cedar Pond AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cedar-deep: #162a22;
+            --cedar: #2d4a3e;
+            --pond: #4a8b7f;
+            --pond-light: #8bd5c5;
+            --stone: #f8f6f3;
+            --text: #243128;
+            --text-muted: #617166;
+            --night-1: #04101c;
+            --night-2: #10233c;
+            --card: rgba(255, 255, 255, 0.78);
+            --line: rgba(45, 74, 62, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top, rgba(139, 213, 197, 0.18), transparent 28%),
+                linear-gradient(180deg, #f7fbf8 0%, #eef7f4 42%, #f8f6f3 100%);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(14px);
+            background: rgba(248, 246, 243, 0.82);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar .container {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'DM Serif Display', serif;
+            color: var(--cedar-deep);
+            font-size: 1.25rem;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            border: 1px solid rgba(45, 74, 62, 0.14);
+            color: var(--cedar);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .pill.primary {
+            background: var(--cedar);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .hero {
+            padding: 76px 0 30px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .hero-copy {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: 0 18px 40px rgba(28, 53, 44, 0.08);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 999px;
+            background: rgba(74, 139, 127, 0.12);
+            color: var(--cedar);
+            padding: 8px 14px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.08;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(2.7rem, 5vw, 4.6rem);
+            color: var(--cedar-deep);
+            margin-bottom: 16px;
+        }
+
+        .hero-copy p {
+            margin: 0 0 18px;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            color: var(--text-muted);
+            max-width: 60ch;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
+        .hero-panel {
+            background: linear-gradient(180deg, var(--night-1), var(--night-2));
+            color: #eef7ff;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 20px 48px rgba(8, 20, 34, 0.22);
+            overflow: hidden;
+            position: relative;
+            min-height: 100%;
+        }
+
+        .hero-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 24%, rgba(255,255,255,0.18) 0 2px, transparent 2px),
+                radial-gradient(circle at 72% 32%, rgba(255,255,255,0.14) 0 1.5px, transparent 1.5px),
+                radial-gradient(circle at 48% 72%, rgba(255,255,255,0.16) 0 2px, transparent 2px),
+                radial-gradient(circle at 86% 12%, rgba(255,255,255,0.12) 0 1.5px, transparent 1.5px);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .panel-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .panel-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(238, 247, 255, 0.72);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .preview-stage {
+            min-height: 220px;
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background:
+                radial-gradient(circle at 50% 30%, rgba(130, 200, 255, 0.18), transparent 35%),
+                linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            display: grid;
+            place-items: center;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-ball {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #ffffff, #cfe8ff 72%, #9dbede 100%);
+            box-shadow: 0 0 36px rgba(255,255,255,0.35);
+        }
+
+        .preview-platform {
+            position: absolute;
+            width: 148px;
+            height: 16px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #dff0ff, #7ea7d7);
+            box-shadow: 0 10px 26px rgba(80, 150, 220, 0.22);
+        }
+
+        .preview-platform.top {
+            top: 36px;
+            right: 42px;
+            transform: rotate(-5deg);
+        }
+
+        .preview-platform.bottom {
+            bottom: 34px;
+            left: 36px;
+            transform: rotate(3deg);
+        }
+
+        .preview-beam {
+            position: absolute;
+            width: 200px;
+            height: 12px;
+            border-radius: 999px;
+            right: 0;
+            top: calc(50% - 6px);
+            background: linear-gradient(90deg, rgba(255, 230, 235, 0.98), rgba(255, 90, 116, 0.18));
+            box-shadow: 0 0 24px rgba(255, 88, 110, 0.35);
+        }
+
+        .fact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .fact-list li {
+            color: rgba(238, 247, 255, 0.8);
+            font-size: 0.96rem;
+        }
+
+        .content {
+            padding: 18px 0 80px;
+        }
+
+        .section-title {
+            margin-bottom: 18px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--cedar-deep);
+        }
+
+        .game-shell {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            padding: 24px;
+            box-shadow: 0 20px 52px rgba(28, 53, 44, 0.08);
+        }
+
+        .shell-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .shell-head p {
+            margin: 8px 0 0;
+            color: var(--text-muted);
+        }
+
+        .game-frame {
+            width: 100%;
+            min-height: 78vh;
+            border: 0;
+            border-radius: 22px;
+            background: #040816;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+        }
+
+        .info-grid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 22px;
+        }
+
+        .info-card h3 {
+            font-size: 1.45rem;
+            color: var(--cedar-deep);
+            margin-bottom: 12px;
+        }
+
+        .info-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+        }
+
+        .info-card li + li {
+            margin-top: 8px;
+        }
+
+        .footer-note {
+            padding: 20px 0 50px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding-top: 40px;
+            }
+
+            .hero-copy,
+            .hero-panel,
+            .game-shell {
+                padding: 20px;
+                border-radius: 22px;
+            }
+
+            .topbar .container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .game-frame {
+                min-height: 68vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container">
+            <a href="/" class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C12 2 10 6 10 10C10 14 12 18 12 22" stroke="#4A8B7F" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 6C12 6 8 8 8 12C8 16 12 18 12 18" stroke="#6DB5A6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M12 6C12 6 16 8 16 12C16 16 12 18 12 18" stroke="#6DB5A6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                    <circle cx="12" cy="4" r="2" fill="#4A8B7F"/>
+                </svg>
+                Cedar Pond
+            </a>
+            <div class="top-links">
+                <a class="pill" href="/">Back Home</a>
+                <a class="pill primary" href="#play">Play Space Ball</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow">Browser Game · Cedar Pond Lab</div>
+                    <h1>Space Ball</h1>
+                    <p>Space Ball is a fast, chaotic gravity-flip arcade game built as a single self-contained browser file. Flip between floor and ceiling, hop onto one-way platforms, dodge lasers, gates, blasters, lava pits, and survive long enough to stack score and diamonds.</p>
+                    <p>The game keeps all the playful weirdness from the prototype while giving it a clean home on the Cedar Pond site. It runs right in the browser with keyboard and touch controls.</p>
+                    <div class="hero-actions">
+                        <a class="pill primary" href="#play">Jump In</a>
+                        <a class="pill" href="./game.html">Open Raw Game File</a>
+                    </div>
+                </div>
+
+                <aside class="hero-panel">
+                    <div class="panel-inner">
+                        <div class="panel-label">What Makes It Fun</div>
+                        <div class="preview-stage" aria-hidden="true">
+                            <div class="preview-platform top"></div>
+                            <div class="preview-platform bottom"></div>
+                            <div class="preview-beam"></div>
+                            <div class="preview-ball"></div>
+                        </div>
+                        <ul class="fact-list">
+                            <li>Gravity flips, hops, ship mode, arrow mode, and one-way landings.</li>
+                            <li>Dedicated difficulty modes with different hazard pools and diamond rewards.</li>
+                            <li>Local diamonds, power-up loadouts, and code-based guest color previews.</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="content" id="play">
+            <div class="container">
+                <h2 class="section-title">Dedicated Game Page</h2>
+                <div class="game-shell">
+                    <div class="shell-head">
+                        <div>
+                            <h3>Play In Page</h3>
+                            <p>Best on desktop with a keyboard, but touch controls also work on iPad.</p>
+                        </div>
+                        <a class="pill" href="./game.html">Open Fullscreen File</a>
+                    </div>
+                    <iframe class="game-frame" src="./game.html" title="Space Ball game"></iframe>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-card">
+                        <h3>Controls</h3>
+                        <ul>
+                            <li><strong>Space</strong> flips gravity after landing.</li>
+                            <li><strong>W</strong> hops opposite your current gravity.</li>
+                            <li><strong>Esc</strong> opens the menu and difficulty picker.</li>
+                            <li>Left tap flips and right tap hops on touch devices.</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Modes</h3>
+                        <ul>
+                            <li><strong>Space + X</strong> for middle mode, then <strong>Z</strong> to cancel.</li>
+                            <li><strong>T + Y</strong> for ship mode, then <strong>G</strong> to stop.</li>
+                            <li><strong>Q</strong> for arrow mode, hold <strong>A</strong> to rise, <strong>E</strong> to stop.</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Difficulty Rewards</h3>
+                        <ul>
+                            <li>Easy: 10,000 score = 1 diamond.</li>
+                            <li>Middle: 1,000 score = 1 diamond.</li>
+                            <li>Hard: 100 score = 1 diamond.</li>
+                            <li>Difficlt: 50 score = 10 diamonds.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-note">
+        Space Ball is hosted as a dedicated Cedar Pond subpage and the raw game file is also available for direct play.
+    </div>
+</body>
+</html>
