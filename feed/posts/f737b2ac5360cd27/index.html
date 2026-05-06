@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="TabSurv adapts modern tabular neural network architectures to survival">
+<meta property="og:description" content="TabSurv adapts modern tabular neural network architectures to survival analysis using a novel histogram loss (SurvHL) that supports censored data, enabling parallel ensemble training across multiple tabular backbones.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/f737b2ac5360cd27/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>TabSurv adapts modern tabular neural network architectures t — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">tabular_ml</span>
+      
+      <span class="tag">deep_learning</span>
+      
+      <span class="tag">survival_analysis</span>
+      
+    </div>
+    <h1 class="post-title">TabSurv adapts modern tabular neural network architectures to survival analysis using a novel histogram loss (SurvHL) th</h1>
+  </div>
+
+  
+  <div class="post-summary">TabSurv adapts modern tabular neural network architectures to survival analysis using a novel histogram loss (SurvHL) that supports censored data, enabling parallel ensemble training across multiple tabular backbones.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    TabSurv: Adapting Modern Tabular Neural Networks to Survival Analysis
+
+Survival analysis on tabular data is a well-studied problem. However, existing deep learning methods are often highly task-specific, which can limit the transfer of new approaches from other domains and introduce constraints that may affect performance. We propose TabSurv, an approach that adapts modern tabular architectures to survival analysis using either the Weibull distribution or non-parametric survival prediction. TabSurv optimizes SurvHL, a novel histogram loss function supporting censored data. In addition to a baseline feed-forward network, we implement deep ensembles of MLPs for survival analysis within TabSurv. In contrast to prior work, the ensemble components are trained in parallel, optimizing survival distribution parameters before averaging, which promotes diversity across ensemble component predictions. We perform a comprehensive empirical evaluation of different proposed architectures on 10 diverse real-world survival datasets. Our results show that TabSurv consistently outperforms on average established classical and deep learning baselines, such as RSF, DeepSurv, DeepHit, SurvTRACE. Notably, deep ensembles with Weibull parametrization instead of non-parametric models achieve the highest average rank by C-index. Overall, our study clarifies how modern tabular neural networks can be adapted and trained to tackle survival analysis problems, offering a strong and reliable approach. The TabSurv implementation is publicly available.
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Stanislav Kirpichenko, Andrei Konstantinov, Lev Utkin</dd>
+      <dt>Date</dt>
+      <dd>2026-05-05</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">3</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>tabular_ml, deep_learning, survival_analysis</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2605.03944v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/5b9ec9b46dfc3098/">Anthropic Fellows introduce Model Spec Midtraining (MSM), a method that teaches ...</a>
+  </h3>
+  <p class="card-summary">Anthropic Fellows introduce Model Spec Midtraining (MSM), a method that teaches AI models the reasoning and values behind desired behaviors to improve generalization beyond standard example-based alignment.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>AnthropicAI</span>
+      <span>&middot;</span>
+      <span>2026-05-05</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/5b9ec9b46dfc3098/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2051758528562364902" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/2ed2ac39e946b195/">Anthropic Fellows research demonstrates that a model deliberately underperformin...</a>
+  </h3>
+  <p class="card-summary">Anthropic Fellows research demonstrates that a model deliberately underperforming can be trained to near-full capability even when supervised only by weaker models.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>AnthropicAI</span>
+      <span>&middot;</span>
+      <span>2026-05-05</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/2ed2ac39e946b195/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2051718308702081047" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/58c34ff2be3f80ec/">Joint research from MATS, Redwood, and Anthropic shows that a strategically sand...</a>
+  </h3>
+  <p class="card-summary">Joint research from MATS, Redwood, and Anthropic shows that a strategically sandbagging model can be trained to stop sandbagging using only weaker models as supervisors.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>AnthropicAI</span>
+      <span>&middot;</span>
+      <span>2026-05-05</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">9</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/58c34ff2be3f80ec/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2051697625179582606" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
