@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<meta property="og:title" content="A marketplace concept for LLM-powered web apps where developers earn r">
-<meta property="og:description" content="A marketplace concept for LLM-powered web apps where developers earn revenue on token margins, addressing the challenge of casual users being unwilling to pay per-app LLM costs.">
-<meta property="og:url" content="https://cedarpond.ai/feed/posts/378633bb0c949a01/">
+<meta property="og:title" content="This work provides a mechanistic explanation for the attention sink ph">
+<meta property="og:description" content="This work provides a mechanistic explanation for the attention sink phenomenon in LLMs, tracing it to variance discrepancy in value aggregation amplified by super neurons in FFN layers causing dimension disparity at the first token.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/a3c626160a7d5783/">
 <meta property="og:site_name" content="CedarPond AI Feed">
 <meta property="og:type" content="article">
 
-  <title>A marketplace concept for LLM-powered web apps where develop — CedarPond AI Feed</title>
+  <title>This work provides a mechanistic explanation for the attenti — CedarPond AI Feed</title>
   <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
   <link rel="stylesheet" href="/feed/style.css">
   <script src="/feed/script.js"></script>
@@ -55,38 +55,39 @@
 
   <div class="post-header">
     <div class="card-tags">
-      <span class="tag tag-category">Industry News</span>
+      <span class="tag tag-category">Research Papers</span>
       
       <span class="tag">llm</span>
       
-      <span class="tag">agents</span>
+      <span class="tag">interpretability</span>
       
-      <span class="tag">monetization</span>
+      <span class="tag">transformers</span>
       
-      <span class="tag">developer_tools</span>
+      <span class="tag">attention</span>
       
     </div>
-    <h1 class="post-title">A marketplace concept for LLM-powered web apps where developers earn revenue on token margins, addressing the challenge </h1>
+    <h1 class="post-title">This work provides a mechanistic explanation for the attention sink phenomenon in LLMs, tracing it to variance discrepan</h1>
   </div>
 
   
-  <div class="post-summary">A marketplace concept for LLM-powered web apps where developers earn revenue on token margins, addressing the challenge of casual users being unwilling to pay per-app LLM costs.</div>
+  <div class="post-summary">This work provides a mechanistic explanation for the attention sink phenomenon in LLMs, tracing it to variance discrepancy in value aggregation amplified by super neurons in FFN layers causing dimension disparity at the first token.</div>
   
 
   <div class="original-content">
     <div class="original-content-label">Original Post</div>
-    Show HN: A marketplace for LLM-powered webapps earning on token margins
-Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powered sites: 1) Most agentic tooling doesn&#x27;t have a enough of a targeted approach to edits to existing files, and will make extraneous edits, 2) Many users will want to try things casually but not spend on each LLM-powered webapp they want to use.<p>The first problem of targeting edits was a much bigger issue previously, where, before agents, ChatGPT would just delete a chuck of code and replace it with `&#x2F;&#x2F; existing code goes here`. Simply editing existing files was a pain. This is mostly solved now as Cursor et al. do a much better job by replacing specific lines and such. However, they still go off the rails a lot (especially gemini cli I&#x27;ve noticed) and make unnecessary and unwanted changes.<p>I&#x27;m hoping to solve that by using my Abstract Syntax Tree approach: when editing a file, the LLM is actually instructed to write code that will modify the data structure backing the source text, rather than the source text itself. For example, to edit an HTML file, we instruct the LLM to write python that imports beautifulsoup and then modifies the data structure underneath it.<p>I hope to solve the second problem (of token usage costing real money but users not wanting to sign up for every site they might want to use) by running a token margin sharing system. Here&#x27;s how it works: I charge 2x for token usage based on the LLM provider (Anthropic and OpenAI support so far). This cr
+    The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity
+
+Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy. We further demonstrate that this discrepancy is drastically amplified by the activation of super neurons within Feed-Forward Network (FFN) layers. Specifically, the channel-sparse down-projections trigger a dimension disparity of the first-token representation, necessitating the formation of attention sinks as a structural anchor. Then, we validate this causal chain through two controlled interventions: (i) isolating the aggregation effect via attention mask modifications and (ii) amplifying the variance of targeted token representations. Both interventions can replicate attention sinks at arbitrary positions. Our mechanistic understanding offers a foundation for the systematic control of sink formation. Finally, as a proof of concept, we propose \textit{head-wise RMSNorm}, an architectural modification that stabilizes value aggregation outputs during pre-training. Our experiments demonstrate that restoring statistical parity across positions significantly accelerates convergence.
   </div>
 
   <div class="post-metadata">
     <dl>
       <dt>Source</dt>
-      <dd>HACKERNEWS (hackernews)</dd>
+      <dd>ARXIV (arxiv)</dd>
       <dt>Author</dt>
-      <dd>cryptoz</dd>
+      <dd>Siquan Li, Kaiqi Jiang, Jiacheng Sun +1 more</dd>
       <dt>Date</dt>
-      <dd>2026-05-02</dd>
+      <dd>2026-05-07</dd>
       
       <dt>Relevance</dt>
       <dd>
@@ -100,7 +101,9 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
@@ -110,19 +113,17 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
   
   <span class="dot"></span>
   
-  <span class="dot"></span>
-  
-  <span class="score-label">4</span>
+  <span class="score-label">6</span>
 </span>
 </dd>
       
       <dt>Topics</dt>
-      <dd>llm, agents, monetization, developer_tools</dd>
+      <dd>llm, interpretability, transformers, attention</dd>
     </dl>
   </div>
 
   
-  <p><a href="https://codeplusequalsai.com/dashboard" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  <p><a href="http://arxiv.org/abs/2605.06611v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
   
 
   
@@ -133,18 +134,18 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@xai</span>
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/9517387c3d4cbf7b/">SpaceX AI will give Anthropic access to Colossus 1, one of the world's largest A...</a>
+    <a href="/feed/posts/29775a8120599540/">Anthropic announces they have fully eliminated the blackmail behavior previously...</a>
   </h3>
-  <p class="card-summary">SpaceX AI will give Anthropic access to Colossus 1, one of the world's largest AI supercomputers, to expand compute capacity for Claude.</p>
+  <p class="card-summary">Anthropic announces they have fully eliminated the blackmail behavior previously observed in Claude 4 under experimental conditions, sharing the research behind how they achieved this.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>xai</span>
+      <span>AnthropicAI</span>
       <span>&middot;</span>
-      <span>2026-05-06</span>
+      <span>2026-05-08</span>
       
       <span>&middot;</span>
       
@@ -176,8 +177,8 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/9517387c3d4cbf7b/">Read more &rarr;</a>
-      <a href="https://x.com/xai/status/2052060350770515978" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/29775a8120599540/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2052808787514228772" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -186,18 +187,18 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
+    <span class="tag tag-category">Research Papers</span>
     <span class="tag">@AnthropicAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/55817d30459c87f3/">Anthropic announces a compute partnership with SpaceX, substantially increasing ...</a>
+    <a href="/feed/posts/9fd8acd0a82c025d/">Anthropic introduces Natural Language Autoencoders, a technique that trains Clau...</a>
   </h3>
-  <p class="card-summary">Anthropic announces a compute partnership with SpaceX, substantially increasing capacity and enabling higher usage limits for Claude Code and the Claude API.</p>
+  <p class="card-summary">Anthropic introduces Natural Language Autoencoders, a technique that trains Claude to translate its internal numeric activations into human-readable text, advancing mechanistic interpretability.</p>
   <div class="card-meta">
     <div class="card-meta-left">
       <span>AnthropicAI</span>
       <span>&middot;</span>
-      <span>2026-05-06</span>
+      <span>2026-05-07</span>
       
       <span>&middot;</span>
       
@@ -219,18 +220,18 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
-  <span class="score-label">8</span>
+  <span class="score-label">9</span>
 </span>
 
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/55817d30459c87f3/">Read more &rarr;</a>
-      <a href="https://x.com/AnthropicAI/status/2052060691893227611" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/9fd8acd0a82c025d/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2052435436157452769" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
@@ -239,18 +240,18 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
       
 <div class="card">
   <div class="card-tags">
-    <span class="tag tag-category">Industry News</span>
-    <span class="tag">@xai</span>
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
   </div>
   <h3 class="card-title">
-    <a href="/feed/posts/97091735075ed93c/">SpaceX AI and Anthropic are exploring a partnership to develop multiple gigawatt...</a>
+    <a href="/feed/posts/5b9ec9b46dfc3098/">Anthropic Fellows introduce Model Spec Midtraining (MSM), a method that teaches ...</a>
   </h3>
-  <p class="card-summary">SpaceX AI and Anthropic are exploring a partnership to develop multiple gigawatts of orbital AI compute capacity.</p>
+  <p class="card-summary">Anthropic Fellows introduce Model Spec Midtraining (MSM), a method that teaches AI models the reasoning and values behind desired behaviors to improve generalization beyond standard example-based alignment.</p>
   <div class="card-meta">
     <div class="card-meta-left">
-      <span>xai</span>
+      <span>AnthropicAI</span>
       <span>&middot;</span>
-      <span>2026-05-06</span>
+      <span>2026-05-05</span>
       
       <span>&middot;</span>
       
@@ -272,18 +273,18 @@ Hi everyone,<p>I&#x27;ve encountered two major problems while building AI-powere
   
   <span class="dot filled"></span>
   
-  <span class="dot"></span>
+  <span class="dot filled"></span>
   
   <span class="dot"></span>
   
-  <span class="score-label">8</span>
+  <span class="score-label">9</span>
 </span>
 
       
     </div>
     <div class="card-links">
-      <a href="/feed/posts/97091735075ed93c/">Read more &rarr;</a>
-      <a href="https://x.com/xai/status/2052060561857302605" target="_blank" rel="noopener">Original &nearr;</a>
+      <a href="/feed/posts/5b9ec9b46dfc3098/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2051758528562364902" target="_blank" rel="noopener">Original &nearr;</a>
     </div>
   </div>
 </div>
