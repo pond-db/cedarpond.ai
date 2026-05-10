@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<meta property="og:title" content="Duralang is a Python decorator library that wraps every LangChain LLM,">
-<meta property="og:description" content="Duralang is a Python decorator library that wraps every LangChain LLM, tool, and MCP call as a Temporal Activity, enabling durable, fault-tolerant execution of LLM workflows.">
-<meta property="og:url" content="https://cedarpond.ai/feed/posts/33c324ad9518bde9/">
+<meta property="og:title" content="Sigma Guard is an open-source verifier for graph-backed AI memory that">
+<meta property="og:description" content="Sigma Guard is an open-source verifier for graph-backed AI memory that uses cellular sheaf cohomology to detect contradictory facts before agents retrieve and reason over them.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/d3a6ea7bd13aeeb8/">
 <meta property="og:site_name" content="CedarPond AI Feed">
 <meta property="og:type" content="article">
 
-  <title>Duralang is a Python decorator library that wraps every Lang — CedarPond AI Feed</title>
+  <title>Sigma Guard is an open-source verifier for graph-backed AI m — CedarPond AI Feed</title>
   <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
   <link rel="stylesheet" href="/feed/style.css">
   <script src="/feed/script.js"></script>
@@ -59,23 +59,31 @@
       
       <span class="tag">agents</span>
       
-      <span class="tag">llm</span>
+      <span class="tag">memory</span>
+      
+      <span class="tag">graph_rag</span>
       
       <span class="tag">open_source</span>
       
-      <span class="tag">orchestration</span>
-      
     </div>
-    <h1 class="post-title">Duralang is a Python decorator library that wraps every LangChain LLM, tool, and MCP call as a Temporal Activity, enabli</h1>
+    <h1 class="post-title">Sigma Guard is an open-source verifier for graph-backed AI memory that uses cellular sheaf cohomology to detect contradi</h1>
   </div>
 
   
-  <div class="post-summary">Duralang is a Python decorator library that wraps every LangChain LLM, tool, and MCP call as a Temporal Activity, enabling durable, fault-tolerant execution of LLM workflows.</div>
+  <div class="post-summary">Sigma Guard is an open-source verifier for graph-backed AI memory that uses cellular sheaf cohomology to detect contradictory facts before agents retrieve and reason over them.</div>
   
 
   <div class="original-content">
     <div class="original-content-label">Original Post</div>
-    Duralang – decorator makes every LangChain LLM/tool/MCP call a Temporal Activity
+    Show HN: Sigma Guard – deterministic contradiction checks for graph memory
+I built a small open-source verifier for graph-backed AI memory and GraphRAG-style systems.<p>The basic problem: graph databases can validate schema, but they usually do not know whether two accepted facts contradict each other. An AI memory layer can store both &quot;Acme prefers annual billing&quot; and &quot;Acme rejected annual billing and requires monthly billing.&quot; Both writes may be valid. The contradiction only shows up later when an agent retrieves both and reasons over them.<p>SIGMA Guard tries to catch that earlier.<p>It represents claims as a graph with local consistency rules and checks whether the proposed structure can be made globally consistent. The underlying mechanism uses cellular sheaf cohomology. The practical interface is simpler: given claims, a graph, or a proposed write, it returns SAFE or UNSAFE with the contradiction details and a receipt hash.<p>The repo includes:<p>verify_claims - check a set of subject&#x2F;property&#x2F;value claims
+check_write - test a proposed graph write before commit
+verify_graph - verify a full graph
+MCP server support for Claude Desktop &#x2F; agent workflows
+a local demo, no API key required<p>Install:<p>pip install sigma-guard[mcp]<p>Run MCP server:<p>sigma-guard-mcp<p>Or run the local demo:<p>git clone <a href="https:&#x2F;&#x2F;github.com&#x2F;Jasonleonardvolk&#x2F;sigma-guard" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;Jasonleonardvolk&#x2F;sigma-guard</a>
+cd sigma-guard
+pip install -e .
+python examples&#x2
   </div>
 
   <div class="post-metadata">
@@ -83,9 +91,9 @@
       <dt>Source</dt>
       <dd>HACKERNEWS (hackernews)</dd>
       <dt>Author</dt>
-      <dd>deepanshsaxena</dd>
+      <dd>invariantjason</dd>
       <dt>Date</dt>
-      <dd>2026-05-03</dd>
+      <dd>2026-05-09</dd>
       
       <dt>Relevance</dt>
       <dd>
@@ -116,12 +124,12 @@
 </dd>
       
       <dt>Topics</dt>
-      <dd>agents, llm, open_source, orchestration</dd>
+      <dd>agents, memory, graph_rag, open_source</dd>
     </dl>
   </div>
 
   
-  <p><a href="https://temporal.io/code-exchange/duralang-durable-stochastic-ai-agents-with-one-decorator" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  <p><a href="https://news.ycombinator.com/item?id=48078195" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
   
 
   
