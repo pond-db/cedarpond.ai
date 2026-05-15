@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="ATLAS unifies agentic (code/tool-call) and latent visual reasoning via">
+<meta property="og:description" content="ATLAS unifies agentic (code/tool-call) and latent visual reasoning via a single discrete token, combining the generalization of agentic methods with the efficiency of latent reasoning while enabling autoregressive parallelization.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/3e67418123bb752b/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>ATLAS unifies agentic (code/tool-call) and latent visual rea — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">agents</span>
+      
+      <span class="tag">visual_reasoning</span>
+      
+      <span class="tag">multimodal</span>
+      
+      <span class="tag">llm</span>
+      
+    </div>
+    <h1 class="post-title">ATLAS unifies agentic (code/tool-call) and latent visual reasoning via a single discrete token, combining the generaliza</h1>
+  </div>
+
+  
+  <div class="post-summary">ATLAS unifies agentic (code/tool-call) and latent visual reasoning via a single discrete token, combining the generalization of agentic methods with the efficiency of latent reasoning while enabling autoregressive parallelization.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both
+
+Visual reasoning, often interleaved with intermediate visual states, has emerged as a promising direction in the field. A straightforward approach is to directly generate images via unified models during reasoning, but this is computationally expensive and architecturally non-trivial. Recent alternatives include agentic reasoning through code or tool calls, and latent reasoning with learnable hidden embeddings. However, agentic methods incur context-switching latency from external execution, while latent methods lack task generalization and are difficult to train with autoregressive parallelization. To combine their strengths while mitigating their limitations, we propose ATLAS, a framework in which a single discrete 'word', termed as a functional token, serves both as an agentic operation and a latent visual reasoning unit. Each functional token is associated with an internalized visual operation, yet requires no visual supervision and remains a standard token in the tokenizer vocabulary, which can be generated via next-token prediction. This design avoids verbose intermediate visual content generation, while preserving compatibility with the vanilla scalable SFT and RL training, without architectural or methodological modifications. To further address the sparsity of functional tokens during RL, we introduce Latent-Anchored GRPO (LA-GRPO), which stabilizes the training by anchoring functional tokens with a statically weighted auxiliary objective, providing stronger gradient
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Ziyu Guo, Rain Liu, Xinyan Chen +1 more</dd>
+      <dt>Date</dt>
+      <dd>2026-05-14</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>agents, visual_reasoning, multimodal, llm</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2605.15198v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/43c8a59bef275b9c/">AI agents discovered a reasoning strategy that reduces LLM token usage by 70%, p...</a>
+  </h3>
+  <p class="card-summary">AI agents discovered a reasoning strategy that reduces LLM token usage by 70%, potentially significant for cost and efficiency optimization.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>steveharing1</span>
+      <span>&middot;</span>
+      <span>2026-05-12</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/43c8a59bef275b9c/">Read more &rarr;</a>
+      <a href="https://firethering.com/autotts-ai-inference-test-time-scaling/" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">@AnthropicAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/9727c04ea4a1f0fc/">Anthropic published a policy paper on US-China AI competition, arguing the US an...</a>
+  </h3>
+  <p class="card-summary">Anthropic published a policy paper on US-China AI competition, arguing the US and democratic allies currently lead in frontier AI and outlining steps to maintain that advantage.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>AnthropicAI</span>
+      <span>&middot;</span>
+      <span>2026-05-14</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/9727c04ea4a1f0fc/">Read more &rarr;</a>
+      <a href="https://x.com/AnthropicAI/status/2054987444664377374" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/37baee0dcb08afa9/">FutureSim evaluates adaptive AI agents by replaying real-world news events chron...</a>
+  </h3>
+  <p class="card-summary">FutureSim evaluates adaptive AI agents by replaying real-world news events chronologically past their knowledge cutoff, revealing clear capability separations among frontier agents forecasting a three-month period.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Shashwat Goel, Nikhil Chandak, Arvindh Arun +5 more</span>
+      <span>&middot;</span>
+      <span>2026-05-14</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/37baee0dcb08afa9/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2605.15188v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
