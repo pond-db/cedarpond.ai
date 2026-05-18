@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="Proposes property-guided LLM program synthesis that uses formal proper">
+<meta property="og:description" content="Proposes property-guided LLM program synthesis that uses formal property verification with concrete counterexamples instead of numeric scores, enabling early stopping and reducing inference costs.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/458a0f18617b3f61/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>Proposes property-guided LLM program synthesis that uses for — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Research Papers</span>
+      
+      <span class="tag">llm</span>
+      
+      <span class="tag">program_synthesis</span>
+      
+      <span class="tag">planning</span>
+      
+      <span class="tag">research</span>
+      
+    </div>
+    <h1 class="post-title">Proposes property-guided LLM program synthesis that uses formal property verification with concrete counterexamples inst</h1>
+  </div>
+
+  
+  <div class="post-summary">Proposes property-guided LLM program synthesis that uses formal property verification with concrete counterexamples instead of numeric scores, enabling early stopping and reducing inference costs.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Property-Guided LLM Program Synthesis for Planning
+
+LLMs have shown impressive success in program synthesis, discovering programs that surpass prior solutions. However, these approaches rely on simple numeric scores to signal program quality, such as the value of the solution or the number of passed tests. Because a score offers no guidance on why a program failed, the system must generate and evaluate many candidates hoping some succeed, increasing LLM inference and evaluation costs. We study a different approach: property-guided LLM program synthesis. Instead of scoring programs after evaluation, we check whether a candidate satisfies a formally defined property. When the property is violated, we stop the evaluation early and provide the LLM with a concrete counterexample showing exactly how the program failed. This feedback drastically reduces both the number of program generations and the evaluation cost, and can guide the LLM to generate stronger programs. We evaluate this approach on PDDL planning domains, asking the LLM to synthesize direct heuristic functions: every state reachable by strictly improving transitions has a strictly improving successor. A heuristic with this property leads hill-climbing algorithm directly to a goal state. A counterexample-guided repair loop generates one candidate program, checks the property over a training set, and returns the first case that violates the property. We evaluate our approach on ten planning domains with an out-of-distribution test set. The synthesized heuristics are effec
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>ARXIV (arxiv)</dd>
+      <dt>Author</dt>
+      <dd>Augusto B. Corrêa, André G. Pereira, Jendrik Seipp</dd>
+      <dt>Date</dt>
+      <dd>2026-05-15</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">6</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>llm, program_synthesis, planning, research</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="http://arxiv.org/abs/2605.16142v1" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/819a41e4b2f00b61/">An autonomous LLM-guided tree search system prospectively generated and optimize...</a>
+  </h3>
+  <p class="card-summary">An autonomous LLM-guided tree search system prospectively generated and optimized disease forecasting models during the 2025-2026 US respiratory season, matching or exceeding expert-curated ensembles for influenza, COVID-19, and RSV. Demonstrates real-world autonomous scientific discovery.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Sarah Martinson, Michael P. Brenner, Martyna Plomecka +3 more</span>
+      <span>&middot;</span>
+      <span>2026-05-15</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/819a41e4b2f00b61/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2605.16238v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">hackernews</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/fe5c71e2ec10198c/">Emergence World evaluates LLMs by having them build and govern simulated societi...</a>
+  </h3>
+  <p class="card-summary">Emergence World evaluates LLMs by having them build and govern simulated societies; Claude built a democracy with zero crimes while Grok's world descended into chaos within 48 hours.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>deepakakkil</span>
+      <span>&middot;</span>
+      <span>2026-05-15</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/fe5c71e2ec10198c/">Read more &rarr;</a>
+      <a href="https://world.emergence.ai/" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Research Papers</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/cbd1dc0758f52976/">Empirically shows that LLMs introduce directional opinion biases when editing hu...</a>
+  </h3>
+  <p class="card-summary">Empirically shows that LLMs introduce directional opinion biases when editing human-written posts on contested topics, with measurable effects on collective opinion formation in human-to-human communication contexts. Raises significant AI safety and governance concerns.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Stratis Tsirtsis, Kai Rawal, Chris Russell +2 more</span>
+      <span>&middot;</span>
+      <span>2026-05-15</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">7</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/cbd1dc0758f52976/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2605.16245v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
