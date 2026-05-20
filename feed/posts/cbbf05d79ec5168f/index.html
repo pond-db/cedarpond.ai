@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<meta property="og:title" content="Forge is an open-source reliability layer that adds guardrails to loca">
+<meta property="og:description" content="Forge is an open-source reliability layer that adds guardrails to local LLM tool-calling, boosting an 8B model from 53% to 99% on multi-step agentic tasks without modifying the model itself.">
+<meta property="og:url" content="https://cedarpond.ai/feed/posts/cbbf05d79ec5168f/">
+<meta property="og:site_name" content="CedarPond AI Feed">
+<meta property="og:type" content="article">
+
+  <title>Forge is an open-source reliability layer that adds guardrai — CedarPond AI Feed</title>
+  <link rel="icon" type="image/svg+xml" href="/feed/favicon.svg">
+  <link rel="stylesheet" href="/feed/style.css">
+  <script src="/feed/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/feed/" class="site-logo">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#2563EB"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M32 12 L28 24 L20 24 L32 18 L44 24 L36 24Z" fill="white" opacity=".9"/>
+          <path d="M32 18 L26 30 L18 30 L32 22 L46 30 L38 30Z" fill="white" opacity=".8"/>
+          <path d="M32 24 L24 36 L16 36 L32 28 L48 36 L40 36Z" fill="white" opacity=".7"/>
+          <rect x="30" y="36" width="4" height="14" rx="1" fill="white" opacity=".9"/>
+        </svg>
+        CedarPond AI
+      </a>
+      <nav class="header-nav">
+        
+        <a href="/feed/model-releases/">🚀 Model Releases</a>
+        
+        <a href="/feed/agent-infra/">🔧 Agent Infrastructure</a>
+        
+        <a href="/feed/research/">📄 Research Papers</a>
+        
+        <a href="/feed/industry/">📰 Industry News</a>
+        
+        <a href="/feed/weekly/">📋 Weekly</a>
+        <!-- My AI Feed button (disabled until backend is ready) -->
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    
+<div class="post-page">
+  <a href="/feed/" class="back-link">&larr; Back to Feed</a>
+
+  <div class="post-header">
+    <div class="card-tags">
+      <span class="tag tag-category">Agent Infrastructure</span>
+      
+      <span class="tag">agents</span>
+      
+      <span class="tag">open_source</span>
+      
+      <span class="tag">llm</span>
+      
+      <span class="tag">inference</span>
+      
+    </div>
+    <h1 class="post-title">Forge is an open-source reliability layer that adds guardrails to local LLM tool-calling, boosting an 8B model from 53% </h1>
+  </div>
+
+  
+  <div class="post-summary">Forge is an open-source reliability layer that adds guardrails to local LLM tool-calling, boosting an 8B model from 53% to 99% on multi-step agentic tasks without modifying the model itself.</div>
+  
+
+  <div class="original-content">
+    <div class="original-content-label">Original Post</div>
+    Show HN: Forge – Guardrails take an 8B model from 53% to 99% on agentic tasks
+Hi HN, I&#x27;m Antoine Zambelli, AI Director at Texas Instruments.<p>I built Forge, an open-source reliability layer for self-hosted LLM tool-calling.<p>What it does:<p>- Adds domain-and-tool-agnostic guardrails (retry nudges, step enforcement, error recovery, VRAM-aware context management) to local models running on consumer hardware<p>- Takes an 8B model from ~53% to ~99% on multi-step agentic workflows without changing the model - just the system around it<p>- Ships with an eval harness and interactive dashboard so you can reproduce every number<p>I wanted to run a handful of always-on agentic systems for my portfolio, didn&#x27;t want to pay cloud frontier costs, and immediately hit the compounding math problem on local models. 90% per-step accuracy sounds great, but with a 5-step workflow that&#x27;s a 40% failure rate. No existing framework seemed to address this mechanical reliability issue - they all seemed tailor-made for cloud frontier.<p>Demo video: <a href="https:&#x2F;&#x2F;youtu.be&#x2F;MzRgJoJAXGc" rel="nofollow">https:&#x2F;&#x2F;youtu.be&#x2F;MzRgJoJAXGc</a> (side-by-side: same model, same task, with and without Forge guardrails)<p>The paper (accepted to ACM CAIS &#x27;26, presenting May 26-29 in San Jose) covers the peer-reviewed findings across 97 model&#x2F;backend configurations, 18 scenarios, 50 runs each. Key numbers:<p>- Ministral 8B with Forge: 99.3%. Claude Sonnet with Forge: 100%. The gap between a free local 8B model on a $600 GPU and a frontier A
+  </div>
+
+  <div class="post-metadata">
+    <dl>
+      <dt>Source</dt>
+      <dd>HACKERNEWS (hackernews)</dd>
+      <dt>Author</dt>
+      <dd>zambelli</dd>
+      <dt>Date</dt>
+      <dd>2026-05-19</dd>
+      
+      <dt>Relevance</dt>
+      <dd>
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+</dd>
+      
+      <dt>Topics</dt>
+      <dd>agents, open_source, llm, inference</dd>
+    </dl>
+  </div>
+
+  
+  <p><a href="https://github.com/antoinezambelli/forge" target="_blank" rel="noopener">View Original Post &nearr;</a></p>
+  
+
+  
+  <div class="related-posts">
+    <h2 class="section-title">Related Posts</h2>
+    <div class="card-grid" style="margin-top: 16px;">
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">@GoogleAI</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/d08bd6df49218277/">Google launched Gemini Spark, a 24/7 personal AI agent in the Gemini App that ta...</a>
+  </h3>
+  <p class="card-summary">Google launched Gemini Spark, a 24/7 personal AI agent in the Gemini App that takes autonomous actions and integrates with Gmail, Google Docs, and Slides for workflow automation.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>GoogleAI</span>
+      <span>&middot;</span>
+      <span>2026-05-19</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/d08bd6df49218277/">Read more &rarr;</a>
+      <a href="https://x.com/GoogleAI/status/2056859455833473091" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/cebf876d6b5897ef/">'Code as Agent Harness' surveys how code has evolved from LLM output to the oper...</a>
+  </h3>
+  <p class="card-summary">'Code as Agent Harness' surveys how code has evolved from LLM output to the operational substrate for agent reasoning, action execution, and environment modeling in agentic systems.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Xuying Ning, Katherine Tieu, Dongqi Fu +39 more</span>
+      <span>&middot;</span>
+      <span>2026-05-18</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/cebf876d6b5897ef/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2605.18747v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+      
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-category">Agent Infrastructure</span>
+    <span class="tag">arxiv</span>
+  </div>
+  <h3 class="card-title">
+    <a href="/feed/posts/c1b0c2577f9b4579/">Argus is a deep research agent system using cooperative Searcher and Navigator a...</a>
+  </h3>
+  <p class="card-summary">Argus is a deep research agent system using cooperative Searcher and Navigator agents to assemble complementary evidence pieces like a jigsaw, avoiding the diminishing returns of naive parallel search.</p>
+  <div class="card-meta">
+    <div class="card-meta-left">
+      <span>Zhen Zhang, Liangcai Su, Zhuo Chen +7 more</span>
+      <span>&middot;</span>
+      <span>2026-05-15</span>
+      
+      <span>&middot;</span>
+      
+<span class="score-bar">
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot filled"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="dot"></span>
+  
+  <span class="score-label">8</span>
+</span>
+
+      
+    </div>
+    <div class="card-links">
+      <a href="/feed/posts/c1b0c2577f9b4579/">Read more &rarr;</a>
+      <a href="http://arxiv.org/abs/2605.16217v1" target="_blank" rel="noopener">Original &nearr;</a>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CedarPond AI &middot; PondOps — DevOps for AI Agents</p>
+      <div class="footer-links">
+        <a href="https://github.com/pond-db">GitHub</a>
+        <a href="/feed/weekly/">Weekly Archive</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
